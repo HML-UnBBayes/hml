@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<!-- This is a stub plugin for new nodes in MEBN.  -->
+<plugin id="edu.gmu.seor.prognos.unbbayesplugin.continuous" version="0.0.2">
+    <requires>
+        <import plugin-id="unbbayes.prs.mebn" plugin-version="1.18.15"/>
+        <import plugin-id="edu.gmu.seor.prognos.unbbayesplugin.cps" plugin-version="1.0.0"/>
+        <!--<import plugin-id="unbbayes.io.XMLBIFIO" plugin-version="2.0.0"/>-->
+        <!--<import plugin-id="unbbayes.io.mebn.UbfIO" plugin-version="2.0.0"/>-->
+    </requires>
+    <runtime>
+        <library type="resources" path="icons/" id="icons">
+        	<export prefix="*"/>
+        </library>
+        <library type="resources" path="resources/" id="resources">
+        	<!-- This is where pr-owl definitions resides -->
+        	<export prefix="*"/>
+        </library>
+        <!-- It seems that loaders does not work as expected on jar files -->
+        <!-- If you change/add the libraries, change/add these library declaration too -->
+        <library id="unbbayes.prs.mebn" path="./prognos.unbbayesplugin.continuous-0.0.2.jar" type="code" >
+        	<export prefix="*"/>
+        </library>
+    </runtime>
+    <extension plugin-id="unbbayes.prs.mebn" point-id="MEBNPluginNode" id="ContinuousResidentNode">
+        <parameter id="class" value="edu.gmu.seor.prognos.unbbayesplugin.continuous.prs.ContinuousResidentNode" />
+        <parameter id="name" value="Continuous resident node" />
+        <parameter id="shapeClass" value="edu.gmu.seor.prognos.unbbayesplugin.continuous.draw.UShapeContinuousResidentNode"/>
+		<parameter id="panelBuilder" value="edu.gmu.seor.prognos.unbbayesplugin.continuous.gui.ContinuousResidentNodePanelBuilder"/>
+		<parameter id="description" value="Resident node with a special LPD script" />
+		<parameter id="icon" value="continuousResident.gif" />
+		<parameter id="cursor" value="cursor-continue.gif" />
+    </extension>
+   
+    <extension plugin-id="unbbayes.prs.mebn" point-id="MEBNIO" id="ContinuousUbfIO">
+        <parameter id="class" value="edu.gmu.seor.prognos.unbbayesplugin.continuous.io.ContinuousUBFIO" />
+        <parameter id="name" value="PR-OWL + UBF with Continuous Nodes" />
+    </extension>
+
+    <extension plugin-id="unbbayes.prs.mebn" point-id="SSBN" id="HybridSSBNGenerator">
+        <parameter id="class" value="edu.gmu.seor.prognos.unbbayesplugin.continuous.ssbn.HybridSSBNGeneratorBuilder" />
+        <parameter id="name" value="Hybrid SSBN generator" />
+    </extension>
+</plugin>

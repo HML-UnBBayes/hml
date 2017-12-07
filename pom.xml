@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>edu.gmu.seor</groupId>
+	<artifactId>unbbayesplugin.hmlp</artifactId>
+	<name>Example of project that depends on Continuous-MEBN, CPS, and UnBBayes-MEBN</name>
+	<!-- If you change the below version, -->
+	<!-- change version and library settings on plugin.xml too, because this is included as library -->
+	<version>0.0.1</version>
+	<url>http://unbbayes.sourceforge.net</url>
+	<licenses>
+		<license>
+			<name> GNU General Public License, Version 3, 29 June 2007</name>
+			<url>http://www.gnu.org/licenses/gpl-3.0.txt</url>
+			<distribution>manual</distribution>
+		</license>
+	</licenses>
+	<issueManagement>
+		<system>SourceForge Tracker</system>
+		<url>https://sourceforge.net/p/unbbayes/_list/tickets?source=navbar</url>
+	</issueManagement>
+	<inceptionYear>2010</inceptionYear>
+	<developers>
+		<developer>
+			<id>YOUR_ID_HERE</id>
+			<name>YOUR NAME HERE</name>
+			<email>YOUR EMAIL HERE</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>YOUR ORGANIZATION HERE</organization>
+			<organizationUrl>URL OF YOUR ORGANIZATION HERE</organizationUrl>
+		</developer>
+		<developer>
+			<id>cardialfly</id>
+			<name>Shou Matsumoto</name>
+			<email>cardialfly@gmail.com</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>George Mason University - GMU</organization>
+			<organizationUrl>www.gmu.edu</organizationUrl>
+			<timezone>-5</timezone>
+		</developer>
+		<developer>
+			<id>young</id>
+			<name>Young Park</name>
+			<email>cparkf@gmu.edu</email>
+			<roles>
+				<role>Developer</role>
+			</roles>
+			<organization>George Mason University - GMU</organization>
+			<organizationUrl>www.gmu.edu</organizationUrl>
+			<timezone>-5</timezone>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Dr. Kathryn Blackmond Laskey</name>
+			<email>klaskey@gmu.edu</email>
+			<url>http://volgenau.gmu.edu/~klaskey
+			</url>
+			<organization>George Mason University - GMU</organization>
+			<organizationUrl>http://www.gmu.edu
+			</organizationUrl>
+			<roles>
+				<role>Consultant</role>
+			</roles>
+			<timezone>-5</timezone>
+		</contributor>
+	</contributors>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<descriptors>
+						<descriptor>dist.xml</descriptor>
+					</descriptors>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-site-plugin</artifactId>
+				<configuration>
+					<locales>en</locales>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+		<dependencies>
+			<!-- This is a plugin project for UnBBayes. Since it uses classes from the core, 
+			     UnBBayes is indeed a dependency -->
+			
+			
+		<dependency>
+			<groupId>edu.gmu.seor</groupId>
+			<artifactId>prognos.unbbayesplugin.continuous</artifactId>
+			<version>0.0.2</version>
+			<optional>false</optional>
+		</dependency>
+		
+		</dependencies>
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId> maven-project-info-reports-plugin</artifactId>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<!-- report>dependencies</report -->
+							<report>project-team</report>
+							<report>issue-tracking</report>
+							<report>license</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-changes-plugin</artifactId>
+				<inherited>false</inherited>
+				<reportSets>
+					<reportSet>
+						<reports>
+							<report>changes-report</report>
+						</reports>
+					</reportSet>
+				</reportSets>
+				<configuration>
+					<issueLinkTemplate>https://sourceforge.net/p/unbbayes/_list/tickets?source=navbar</issueLinkTemplate>
+  				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>changes-maven-plugin</artifactId>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<configuration>
+					<links>
+						<link>
+							http://docs.oracle.com/javase/7/docs/api/
+						</link>
+					</links>
+					<aggregate>true</aggregate>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

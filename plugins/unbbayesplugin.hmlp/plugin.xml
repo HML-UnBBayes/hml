@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!DOCTYPE plugin PUBLIC "-//JPF//Java Plug-in Manifest 1.0" "http://jpf.sourceforge.net/plugin_1_0.dtd">
+<!-- This is an example of plugin descriptor for UnBBayes.  -->
+<plugin id="unbbayesplugin.hmlp" version="0.0.1">
+    <requires>
+        <import plugin-id="edu.gmu.seor.prognos.unbbayesplugin.continuous" plugin-version="0.0.2"/>
+        <import plugin-id="unbbayes.util.extension.core" plugin-version="4.22.18"/>
+    </requires>
+    <runtime>
+        <library type="resources" path="icons/" id="icons">
+        	<export prefix="*"/>
+        </library>
+        <library type="resources" path="resources/" id="resources">
+        	<!-- This is where pr-owl definitions resides -->
+        	<export prefix="*"/>
+        </library>
+        <!-- It seems that loaders does not work as expected on jar files -->
+        <!-- If you change/add the libraries, change/add these library declaration too -->
+        <library id="unbbayesplugin.hmlp" path="./unbbayesplugin.hmlp-0.0.1.jar" type="code" >
+        	<export prefix="*"/>
+        </library>
+    </runtime>
+    
+    
+    <extension plugin-id="unbbayes.util.extension.core" point-id="Module" id="HMLP">
+        <parameter id="class" value="unbbayes.gui.HMLPNetworkWindow" />
+        <parameter id="name" value="HMLP" />
+        <parameter id="builder" value="unbbayes.gui.HMLPNetworkWindowBuilder" />
+		<parameter id="description" value="HMLP" />
+		<parameter id="icon" value="h.gif" />
+		<parameter id="category" value="tool" />
+    </extension>
+</plugin>
