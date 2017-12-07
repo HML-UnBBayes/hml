@@ -1,0 +1,83 @@
+<assembly>
+  <id>dist</id>
+  <formats>
+    <format>zip</format>
+  </formats>
+  <includeBaseDirectory>false</includeBaseDirectory>
+  <fileSets>
+  	<fileSet>
+      <directory>plugins/unbbayesplugin.hmlp/icons</directory>
+      <outputDirectory>${artifactId}-${version}/icons</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>plugins/unbbayesplugin.hmlp/</directory>
+      <outputDirectory>${artifactId}-${version}/</outputDirectory>
+      <includes>
+        <include>plugin.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>plugins/unbbayesplugin.hmlp/</directory>
+      <outputDirectory>${artifactId}-${version}/</outputDirectory>
+      <includes>
+        <include>README.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory></directory>
+      <outputDirectory>${artifactId}-${version}/</outputDirectory>
+      <includes>
+        <include>RELEASE.txt</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>pr-owl/</directory>
+      <outputDirectory>${artifactId}-${version}/resources/pr-owl</outputDirectory>
+      <includes>
+        <include>**/*</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>target/</directory>
+      <outputDirectory>${artifactId}-${version}/</outputDirectory>
+      <includes>
+        <include>*.jar</include>
+      </includes>
+    </fileSet>
+    <fileSet>
+      <directory>examples/</directory>
+      <outputDirectory>${artifactId}-${version}/examples</outputDirectory>
+      <includes>
+		<include>**/*</include>
+      </includes>
+    </fileSet>
+    
+    
+  </fileSets>
+  <dependencySets>
+    <dependencySet>
+      <outputDirectory>${artifactId}-${version}/lib</outputDirectory>
+      <unpack>false</unpack>
+      <scope>runtime</scope>
+      <includes>
+<!--       	Only include MEBN-specific libs - do not include UnBBayes' dependency -->
+<!--       	The format should be groupId:artificatId -->
+        <include>*:jar:*</include>
+      </includes>
+      <excludes>
+        <exclude>*:sources</exclude>
+        <exclude>br.unb.cic:*</exclude>
+        <exclude>javax.help:javahelp</exclude>
+        <exclude>jaxme:*</exclude>
+        <exclude>xalan:*</exclude>
+        <exclude>net.sf.jpf:*</exclude>
+        <exclude>log4j:*</exclude>
+        <exclude>commons-logging:commons-logging</exclude>
+      </excludes>
+    </dependencySet>
+  </dependencySets>
+</assembly>
+
