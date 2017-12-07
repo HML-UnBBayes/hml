@@ -1,0 +1,86 @@
+% UBF file header
+Version=0.04
+PrOwl="VarSetNameTest.owl"
+
+% UBF MTheory declaration
+MTheory=MEBN
+NextMFrag=2
+NextResident=5
+NextInput=1
+NextContext=2
+NextEntity=1
+
+% UBF MFrags and Nodes declaration
+
+% MFrag
+MFrag=DMFrag1
+NextOrdinaryVar=5
+
+% Resident nodes
+
+
+Node=NodeDistance
+Type=DomainResidentNode
+Position=167.0,443.0
+Size=171,60
+Color=-66914
+PossibleValuesOrder=long,short,medium
+
+Node=RegionDistance
+Type=DomainResidentNode
+Position=71.0,284.0
+Size=175,60
+Color=-66914
+PossibleValuesOrder=long,short,medium
+
+Node=isLocatedIn
+Type=DomainResidentNode
+Position=317.0,278.0
+Size=153,60
+Color=-66914
+PossibleValuesOrder=true,false,absurd
+
+Node=isLocatedInCopy
+Type=DomainResidentNode
+Position=433.0,375.0
+Size=181,60
+Color=-66914
+PossibleValuesOrder=true,false,absurd
+
+% Context nodes
+
+
+Node=CX1
+Type=ContextNode
+Position=337.0,47.0
+Size=129,60
+Color=-5178237
+
+% Ordinary Variables
+
+
+Node=n1
+Type=OrdinalVar
+Position=50.0,6.0
+Size=133,60
+Color=-5178237
+
+Node=n2
+Type=OrdinalVar
+Position=188.0,6.0
+Size=133,60
+Color=-5178237
+
+Node=r1
+Type=OrdinalVar
+Position=52.0,83.0
+Size=129,60
+Color=-5178237
+
+Node=r2
+Type=OrdinalVar
+Position=190.0,83.0
+Size=129,60
+Color=-5178237
+
+% Object Entity Instances

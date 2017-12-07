@@ -1,0 +1,51 @@
+% UBF file header
+Version=0.04
+PrOwl="EntityAsNodeState.owl"
+
+% UBF MTheory declaration
+MTheory=MEBN
+NextMFrag=2
+NextResident=3
+NextInput=1
+NextContext=1
+NextEntity=1
+
+% UBF MFrags and Nodes declaration
+
+% MFrag
+MFrag=DMFrag1
+NextOrdinaryVar=3
+
+% Resident nodes
+
+
+Node=Parent
+Type=DomainResidentNode
+Position=175.0,187.0
+Size=106,60
+Color=-66914
+PossibleValuesOrder=MyEntity
+
+Node=Child
+Type=DomainResidentNode
+Position=205.0,369.0
+Size=87,60
+Color=-66914
+PossibleValuesOrder=MyEntity
+
+% Ordinary Variables
+
+
+Node=ov
+Type=OrdinalVar
+Position=151.0,8.0
+Size=133,60
+Color=-5178237
+
+Node=ov2
+Type=OrdinalVar
+Position=152.0,66.0
+Size=140,60
+Color=-5178237
+
+% Object Entity Instances
