@@ -1,0 +1,7 @@
+environmental_factors_Temperature,environmental_factors_Light,environmental_factors_Wind,environmental_factors_Humidity,environmental_factors_Rain,
+High,High,Fast,High,High
+Low,High,Slow,Low,High
+High,High,Slow,High,Low
+High,Low,Fast,High,Low
+Low,Low,Fast,Low,Low
+High,High,Slow,High,High

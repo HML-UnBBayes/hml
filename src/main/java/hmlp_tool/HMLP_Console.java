@@ -205,6 +205,9 @@ public class HMLP_Console extends GeneralDialog {
 	} 
 	
 
+	/*
+	 * A converter for Script MEBN to Graph MEBN 
+	 */
 	public void openMEBNeditor(MTheory mTheory) {
 		// Creating UnBBayes MEBN
 		MultiEntityBayesianNetwork mebn = new MultiEntityBayesianNetwork(mTheory.name);
@@ -285,8 +288,10 @@ public class HMLP_Console extends GeneralDialog {
 	                    inclusions.add("CLD");
 	                    String lcld = l.toString(inclusions);
 	                    lcld = lcld.substring(4, lcld.length()-3);
+	                    
 	                    // Use square brackets
-	                    lcld = "[" + lcld + "]";
+	                    //lcld = "[" + lcld + "]";
+	                   	                    
 	                    rNode.setTableFunction(lcld);
 	                
 	                    // Add states
@@ -316,8 +321,11 @@ public class HMLP_Console extends GeneralDialog {
 	                    inclusions.add("CLD");
 	                    String lcld = l.toString(inclusions);
 	                    lcld = lcld.substring(4, lcld.length()-3);
+
 	                    // Use square brackets
-	                    lcld = "[" + lcld + "]";
+	                    //lcld = "[" + lcld + "]";
+	                    
+	                    
 	                    cRnode.setTableFunction(lcld);
 	                    
 	                    // Adding to controller
@@ -341,9 +349,25 @@ public class HMLP_Console extends GeneralDialog {
 										
 						// Add to Map
 			    		mapResNode.put(cRnode.getName(), cRnode);
-                	}
-
+                	} 
+	            } 
+	        }
+			 
+			for (MFrag m : mTheory.mfrags.keySet()) {
+				int NodePosition = 1;
+				
+				// Mapper for Edges - to be added in the end of each MFrag conversion
+				HashMap<String, String> edgeNodes = new HashMap<String, String>();
+				
+				MultiEntityBayesianNetwork curMEBN = (MultiEntityBayesianNetwork)mebnController.getNetwork();
+				unbbayes.prs.mebn.MFrag mfrag = curMEBN.getMFragByName(m.name);
+				 
+				// Resident Nodes
+				for (MNode r : m.arrayResidentNodes) {  
 					// Input Nodes - Pointing to current Resident Node
+					ResidentNode currentNode = mapResNode.get(r.name);
+					NodePosition = (int) currentNode.getPosition().y;
+					
 					for (MNode i : r.inputParentMNodes) {
 	                    
 	                    // Create Input Node
@@ -351,8 +375,9 @@ public class HMLP_Console extends GeneralDialog {
 	                    InputNode iNode = (InputNode) mebnController.insertInputNode(1, NodePosition);
 	                    NodePosition = NodePosition + 60;
 	                    mebnController.setInputInstanceOf(iNode, crNodeOfInput);
-	                    iNode.setName(crNodeOfInput.getName());
-	                    iNode.setDescription(crNodeOfInput.getDescription());
+	                    // For input nodes, the following two functions are not necessary.
+	                    //iNode.setName(crNodeOfInput.getName());
+	                    //iNode.setDescription(crNodeOfInput.getDescription());
 	                    iNode.setSize(400, 60);
 	                    
 	                    // Add arguments
@@ -385,7 +410,7 @@ public class HMLP_Console extends GeneralDialog {
                     mebnController.setCurrentMFrag(mfrag);
 				}
 	        }
-			
+			 
 			// Update pane and put MTheory view as final active
 			mebnController.getMebnEditionPane().getNetworkWindow().getGraphPane().update();
 			mebnController.getMebnEditionPane().setMTheoryTreeActive();
