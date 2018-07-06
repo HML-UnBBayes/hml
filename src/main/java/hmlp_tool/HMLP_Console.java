@@ -432,7 +432,7 @@ public class HMLP_Console extends GeneralDialog {
     		leftTree.password = textInputArea.getConntents("Password: ");
     		
     		if (leftTree.username.isEmpty()) {
-    			leftTree.username = "root";
+				leftTree.username = "root";
     			leftTree.password = "jesus";
     		}
     		
