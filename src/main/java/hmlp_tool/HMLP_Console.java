@@ -189,12 +189,20 @@ public class HMLP_Console extends GeneralDialog {
 			showMTheory_CLD();
 			
 			// Starting UnBBayes MEBN window
-			System.out.print("\n\n################################ Opening MEBN window...\n");
+			System.out.print("\n\n################################ Opening MEBN window...\n"); 
+			
+			// Show MEBN window 
 			openMEBNeditor(mTheory);
+//			UnBBayesModule module = new OpenMEBNeditor().run(mTheory);
+//			this.getUnbbayesFrame().addWindow(module);
 		} else if (wMode == windowMode.EVALUATION) { 
 			// Starting UnBBayes MEBN window
-			System.out.print("\n\n################################ Opening MEBN window...\n");
+			System.out.print("\n\n################################ Opening MEBN window...\n"); 
+			
+			// Show MEBN window 
 			openMEBNeditor(mTheory);
+//			UnBBayesModule module = new OpenMEBNeditor().run(mTheory);
+//			this.getUnbbayesFrame().addWindow(module);
 		}  
  		   
  		treeContainer.init();	
@@ -213,16 +221,16 @@ public class HMLP_Console extends GeneralDialog {
 		MultiEntityBayesianNetwork mebn = new MultiEntityBayesianNetwork(mTheory.name);
 		
 		// Creating UnBBayes MEBN Window
-		MEBNNetworkWindow ret = new MEBNNetworkWindow(mebn);
-		ret.setModuleName("MEBN");
-		ret.setTitle(mTheory.name);
+		MEBNNetworkWindow resultNet = new MEBNNetworkWindow(mebn);
+		resultNet.setModuleName("MEBN");
+		resultNet.setTitle(mTheory.name);
 		
 		// Mappers to track OV and Resident Nodes
 		HashMap<String, OrdinaryVariable> mapOVariable = new HashMap<String, OrdinaryVariable>();
 		HashMap<String, ResidentNode> mapResNode = new HashMap<String, ResidentNode>();
 
 		// Creating MEBN Controller
-		MEBNController mebnController = ret.getMebnEditionPane().getMebnController();
+		MEBNController mebnController = resultNet.getMebnEditionPane().getMebnController();
 		
 		
 		// Starting conversion from HMLP-MEBN to UnBBayes-MEBN
@@ -418,14 +426,12 @@ public class HMLP_Console extends GeneralDialog {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+		 
 		// Show MEBN window
-		UnBBayesModule module = ret; //wb.buildUnBBayesModule();
+		UnBBayesModule module = resultNet; //wb.buildUnBBayesModule();
 		this.getUnbbayesFrame().addWindow(module);
 	}
-	
-	
-	
+	 
     public void keyUpdated (KeyEvent e) {
     	if (e.getKeyCode() == KeyEvent.VK_ENTER) {
     		leftTree.username = textInputArea.getConntents("Username: ");
