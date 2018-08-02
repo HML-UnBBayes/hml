@@ -1,15 +1,4 @@
-/*
- * Decompiled with CFR 0_118.
- * 
- * Could not load the following classes:
- *  mebn_rm.MEBN.CLD.CLD
- *  mebn_rm.MEBN.CLD.Categorical
- *  mebn_rm.MEBN.CLD.ConditionalGaussian
- *  mebn_rm.MEBN.MFrag.MFrag
- *  mebn_rm.MEBN.MNode.MNode
- *  mebn_rm.MEBN.MTheory.MTheory
- */
-package hml.test.watering_system_dynamic;
+package hml.text_mode_test.spam;
  
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,29 +15,31 @@ import mebn_rm.MEBN.MTheory.MTheory;
 import mebn_rm.MEBN.MTheory.OVariable;
 import mebn_rm.util.StringUtil;
 
-public class Rules_watering_system_dynamic
+public class Rules_spam
 extends ProbabilisticRules {
 	MTheory mTheory = null;
     public void setRules(MTheory m) {
     	mTheory =  m;
     	
     	List<String> nodeList = new ArrayList<String>();
-    	
-    	// 1. land_state.land_state_Dry
-        nodeList.add("plant.plant_PlantType");
-        nodeList.add("plant_state.plant_state_Health"); 
-      	nodeList.add("region.region_LocationType");
-      	nodeList.add("time.time_Season"); 
-      	nodeList.add("time.time_DayTime");
-      	nodeList.add("environmental_factors.environmental_factors_Temperature");
-      	nodeList.add("environmental_factors.environmental_factors_Light");
-      	nodeList.add("environmental_factors.environmental_factors_Wind");
-      	nodeList.add("environmental_factors.environmental_factors_Humidity");
-      	nodeList.add("environmental_factors.environmental_factors_Rain"); 
-      	nodeList.add("land_state.land_state_Dry");
-      	addParents_hardcoded("land_state.land_state_Dry", nodeList);   
+    	 
+        nodeList.add("review.review_od"); 
+        nodeList.add("review.review_npp");
+        nodeList.add("review.review_etf");
+        nodeList.add("review.review_rd");
+        nodeList.add("review.review_res"); 
+        
+        nodeList.add("user.user_bst"); 
+//        nodeList.add("user.user_nr"); 
+//        nodeList.add("user.user_acs");
+         
+        m.addParents("review.review_spamicity", nodeList);   
     } 
      
+    /*
+     * If we need to set special context nodes (e.g., predecessor) for a dynamic MTheory, 
+     * we may use the following functions.
+     */
     public void addParents_hardcoded(String c, List<String> ps) {
         String mFrag = new StringUtil().getLeft(c);
         String mNode = new StringUtil().getRight(c);
@@ -228,7 +219,7 @@ extends ProbabilisticRules {
             	 
             	// For predecessor
             	MNode predecessor = mTheory.getMNode("predecessor.predecessor");
-            	MNode inputpredecessor = new MNode(predecessor.name);
+            	MNode inputpredecessor = new MNode(f, predecessor.name);
             	inputpredecessor.originalMNode = predecessor;
             	inputpredecessor.ovs.add(land_state_P_idPrevTime.ovs.get(0));
             	inputpredecessor.ovs.add(land_state_idTime.ovs.get(0)); 
@@ -363,129 +354,6 @@ extends ProbabilisticRules {
                 
             }  
         }
-    }
-    
-    public void addParents(String c, List<String> ps) {
-        String mFrag = new StringUtil().getLeft(c);
-        String mNode = new StringUtil().getRight(c);
-        String combParents = "";
-        boolean bOtherMFrag = false;
-          
-        for (String p : ps) {
-            String mFragP = new StringUtil().getLeft(p); 
-            if (!mFrag.equalsIgnoreCase(mFragP) && !bOtherMFrag) { 
-                bOtherMFrag = true;
-            } 
-        }
-        
-        combParents = mNode;
-        
-        MFrag f = mTheory.getMFrag(mFrag);
-        MNode childMNode = f.getMNode(mNode);  
-        
-        if (bOtherMFrag) {
-            String sql = "SELECT\r\n";
-            String sqlFrom = "";
-            
-            sql = sql + f.getTableName() + "." + childMNode.getAttributeName() + " as " + mNode + ",\r\n";
-            sqlFrom = sqlFrom + f.getTableName() + ", ";
-            
-            MFrag newMFrag = new MFrag(mTheory, combParents);
-            newMFrag.setTableName(f.getTableName());
-            
-            MNode newChild = null;
-            if (childMNode.isContinuous()) {
-                newChild = new MCNode(childMNode);
-            } else if (childMNode.isDiscrete()) {
-                newChild = new MDNode(childMNode);
-            }
-            newMFrag.setMNodes(newChild);
-            
-            List<String> keys = newMFrag.getRDBKeys();
-            
-            // Add Isa Context Nodes for the new MFrag from the current MFrag
-            for (String key : keys) {
-            	String originEntity = mTheory.rdb.getOriginFromKey(newMFrag.table, key);
-                OVariable ov = new OVariable(f.getTableName(), key, originEntity);
-        		new MIsANode(newMFrag, ov);
-            }
-
-            // Add parent nodes
-            List<MFrag> parentMFrags = new ArrayList<MFrag>();
-            for (String p2 : ps) {
-                String mFragP = new StringUtil().getLeft(p2);
-                String mNodeP = new StringUtil().getRight(p2);
-
-                MFrag fp = mTheory.getMFrag(mFragP);
-                MNode parentMNode = fp.getMNode(mNodeP);
-                if (!parentMFrags.contains(fp)) {
-                	parentMFrags.add(fp);
-                }
-
-                // create a joining sql for child and parent nodes
-                if (!fp.isTimedMFrag()){
-	                sql += fp.getTableName() + "." + parentMNode.getAttributeName() + " as " + mNodeP + ",\r\n";
-//	                sqlFrom += fp.getTableName() + ", ";
-                } else { // is a TimedMFrag 
-                	sql += fp.getTableName() + "." + mNodeP + " as " + mNodeP + ",\r\n";
-//	                sqlFrom += " ( " +  fp.joiningSQL + " ) " + fp.getTableName();  
-//	                sqlFrom += ", ";
-                }
-                
-                List<String> keys2 = fp.getRDBKeys();
-                List<OVariable> listOV = new ArrayList<OVariable>(); 
-                
-                // Add Isa Context Nodes for the new MFrag from the parent MFrags
-                for (String key2 : keys2) {
-                    String originEntity = mTheory.rdb.getOriginFromKey(fp.getTableName(), key2);
-                    OVariable ov = new OVariable(fp.getTableName(), key2, originEntity);
-                    new MIsANode(newMFrag, ov);
-                    listOV.add(ov);
-                }
-                
-                // Create a new parent input MNode from a current parent MNode
-                // Both have different OVs
-                MNode ip = null;
-                if (parentMNode.isContinuous()) {
-                	ip = new MCNode(fp, parentMNode, listOV);
-                } else if (parentMNode.isDiscrete()) {
-                	ip = new MDNode(fp, parentMNode, listOV);
-                }
-                
-                newChild.setInputParents(ip);
-            }
-             
-            sql = sql.substring(0, sql.length() - 3);
-            sql = sql + "\r\nFROM\r\n";
-            
-            for (MFrag fp : parentMFrags){
-	            if (fp.joiningSQL == null){
-	                sqlFrom += fp.getTableName() + ", ";
-	            } else { // is a TimedMFrag 
-	                sqlFrom += " ( " +  fp.joiningSQL + " ) " + fp.getTableName();  
-	                sqlFrom += ", ";
-	            }
-            }
-            
-            sqlFrom = sqlFrom.substring(0, sqlFrom.length() - 2);
-            sql = sql + (String)sqlFrom + "\r\n";
-            
-            // set a where clause
-            
-            newMFrag.joiningSQL = sql;
-            
-            // If there is no more node, then delete this MFrag 
-            if (f.removeMNode(childMNode)) {
-            	mTheory.removeMFrag(f);
-            }
-        } else { // If added parents are in the same MFrag
-            for (String p3 : ps) {
-                String mFragP = new StringUtil().getLeft(p3);
-                String mNodeP = new StringUtil().getRight(p3);
-                MNode parentMNode = f.getMNode(mNodeP);
-                childMNode.setParents(parentMNode);
-            }
-        }
-    }
+    } 
 }
 

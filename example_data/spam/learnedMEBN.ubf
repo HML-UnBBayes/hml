@@ -4,9 +4,9 @@ PrOwl="learnedMEBN.owl"
 
 % UBF MTheory declaration
 MTheory=ROOT_MTheory_1
-NextMFrag=3
+NextMFrag=4
 NextResident=11
-NextInput=1
+NextInput=7
 NextContext=1
 NextEntity=1
 
@@ -54,16 +54,9 @@ Size=400,60
 Color=-66914
 PossibleValuesOrder=T,F
 
-Node=review_spamicity
-Type=DomainResidentNode
-Position=1.0,361.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=high,low
-
 Node=review_idUser
 Type=DomainResidentNode
-Position=1.0,421.0
+Position=1.0,361.0
 Size=400,60
 Color=-66914
 PossibleValuesOrder=u9,u10,u11,u5,u7,u3,u2,u1,u4,u6,u8
@@ -111,6 +104,74 @@ PossibleValuesOrder=T,F
 Node=user_idUser
 Type=OrdinalVar
 Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=review_spamicity
+NextOrdinaryVar=3
+
+% Resident nodes
+
+
+Node=review_spamicity
+Type=DomainResidentNode
+Position=1.0,121.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=high,low
+
+% Input nodes
+
+
+Node=IX1
+Type=GenerativeInputNode
+Position=1.0,121.0
+Size=400,60
+Color=-2302756
+
+Node=IX2
+Type=GenerativeInputNode
+Position=1.0,181.0
+Size=400,60
+Color=-2302756
+
+Node=IX3
+Type=GenerativeInputNode
+Position=1.0,241.0
+Size=400,60
+Color=-2302756
+
+Node=IX4
+Type=GenerativeInputNode
+Position=1.0,301.0
+Size=400,60
+Color=-2302756
+
+Node=IX5
+Type=GenerativeInputNode
+Position=1.0,361.0
+Size=400,60
+Color=-2302756
+
+Node=IX6
+Type=GenerativeInputNode
+Position=1.0,421.0
+Size=400,60
+Color=-2302756
+
+% Ordinary Variables
+
+
+Node=review_idReview
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+Node=user_idUser
+Type=OrdinalVar
+Position=1.0,61.0
 Size=400,60
 Color=-5178237
 

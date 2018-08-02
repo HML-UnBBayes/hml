@@ -170,416 +170,159 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                                         <isTypeOf>
                                           <MetaEntity rdf:ID="USER_label">
                                             <subsOVar>
-                                              <OVariable rdf:ID="user.user_idUser">
+                                              <OVariable rdf:ID="review_spamicity.user_idUser">
                                                 <isOVariableIn>
-                                                  <Domain_MFrag rdf:ID="Domain_MFrag.user">
-                                                    <hasResidentNode>
-                                                      <Domain_Res rdf:ID="Domain_Res.user_acs">
+                                                  <Domain_MFrag rdf:ID="Domain_MFrag.review_spamicity">
+                                                    <hasInputNode>
+                                                      <Generative_input rdf:ID="IX1">
+                                                        <hasPossibleValues>
+                                                          <CategoricalRVState rdf:ID="F">
+                                                            <isPossibleValueOf>
+                                                              <Generative_input rdf:ID="IX2">
+    <hasPossibleValues rdf:resource="#F"/>
+    <hasPossibleValues>
+      <CategoricalRVState rdf:ID="T">
+        <hasType>
+          <MetaEntity rdf:ID="CategoryLabel">
+            <isTypeOf>
+              <CategoricalRVState rdf:ID="u3">
+                <isPossibleValueOf>
+                  <Domain_Res rdf:ID="Domain_Res.review_idUser">
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u8">
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                        <hasType rdf:resource="#CategoryLabel"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u10">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues rdf:resource="#u3"/>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u7">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u2">
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                        <hasType rdf:resource="#CategoryLabel"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasArgument>
+                      <SimpleArgRelationship rdf:ID="review_idUser_1">
+                        <isArgumentOf rdf:resource="#Domain_Res.review_idUser"/>
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <hasArgTerm>
+                          <OVariable rdf:ID="review.review_idReview">
+                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >review_idReview</rdfs:comment>
+                            <isSubsBy>
+                              <MetaEntity rdf:ID="REVIEW_label">
+                                <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >!REVIEW_label</hasUID>
+                                <hasType rdf:resource="#TypeLabel"/>
+                                <subsOVar>
+                                  <OVariable rdf:ID="review_spamicity.review_idReview">
+                                    <isArgTermIn>
+                                      <SimpleArgRelationship rdf:ID="IX5_1">
+                                        <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+                                        <hasArgNumber rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#int"
+                                        >1</hasArgNumber>
+                                        <isArgumentOf>
+                                          <Generative_input rdf:ID="IX5">
+                                            <hasPossibleValues rdf:resource="#F"/>
+                                            <hasPossibleValues rdf:resource="#T"/>
+                                            <isParentOf>
+                                              <Domain_Res rdf:ID="Domain_Res.review_spamicity">
+                                                <hasParent>
+                                                  <Generative_input rdf:ID="IX3">
+                                                    <rdfs:comment
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >IX3</rdfs:comment>
+                                                    <hasPossibleValues rdf:resource="#F"/>
+                                                    <hasPossibleValues rdf:resource="#T"/>
+                                                    <hasArgument>
+                                                      <SimpleArgRelationship rdf:ID="IX3_1">
+                                                        <isArgumentOf rdf:resource="#IX3"/>
+                                                        <hasArgNumber
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#int"
+                                                        >1</hasArgNumber>
+                                                        <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+                                                      </SimpleArgRelationship>
+                                                    </hasArgument>
+                                                    <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                                    <isParentOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                    <isInputInstanceOf>
+                                                      <Domain_Res rdf:ID="Domain_Res.review_etf">
                                                         <rdfs:comment
                                                          rdf:datatype=
                                                         "http://www.w3.org/2001/XMLSchema#string"
-                                                        >user_acs</rdfs:comment>
+                                                        >review_etf</rdfs:comment>
+                                                        <hasProbDist>
+                                                          <DeclarativeDist rdf:ID="review_etf_Table">
+                                                            <hasDeclaration
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >[T = 0.53125, F = 0.46875]
+			</hasDeclaration>                                        <isProbDistOf rdf:resource="#Domain_Res.review_etf"/>
+                                                          </DeclarativeDist>
+                                                        </hasProbDist>
+                                                        <hasPossibleValues rdf:resource="#F"/>
+                                                        <hasPossibleValues rdf:resource="#T"/>
+                                                        <hasInputInstance rdf:resource="#IX3"/>
                                                         <hasArgument>
-                                                          <SimpleArgRelationship rdf:ID="user_acs_1">
+                                                          <SimpleArgRelationship rdf:ID="review_etf_1">
+                                                            <hasArgTerm rdf:resource="#review.review_idReview"/>
                                                             <hasArgNumber
                                                              rdf:datatype=
                                                             "http://www.w3.org/2001/XMLSchema#int"
                                                             >1</hasArgNumber>
-                                                            <isArgumentOf rdf:resource="#Domain_Res.user_acs"/>
-                                                            <hasArgTerm rdf:resource="#user.user_idUser"/>
+                                                            <isArgumentOf rdf:resource="#Domain_Res.review_etf"/>
                                                           </SimpleArgRelationship>
                                                         </hasArgument>
-                                                        <hasProbDist>
-                                                          <DeclarativeDist rdf:ID="user_acs_Table">
-                                                            <hasDeclaration
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#string"
-                                                            >[T = 0.375, F = 0.625]
-			</hasDeclaration>                                        <isProbDistOf rdf:resource="#Domain_Res.user_acs"/>
-                                                          </DeclarativeDist>
-                                                        </hasProbDist>
-                                                        <hasPossibleValues>
-                                                          <CategoricalRVState rdf:ID="F">
-                                                            <isPossibleValueOf>
+                                                        <isResidentNodeIn>
+                                                          <Domain_MFrag rdf:ID="Domain_MFrag.review">
+                                                            <hasOVariable rdf:resource="#review.review_idReview"/>
+                                                            <hasResidentNode rdf:resource="#Domain_Res.review_idUser"/>
+                                                            <hasResidentNode>
+                                                              <Domain_Res rdf:ID="Domain_Res.review_res">
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >review_res</rdfs:comment>
+    <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
+    <hasPossibleValues rdf:resource="#F"/>
+    <hasPossibleValues rdf:resource="#T"/>
+    <hasInputInstance rdf:resource="#IX5"/>
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="review_res_1">
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</hasArgNumber>
+        <isArgumentOf rdf:resource="#Domain_Res.review_res"/>
+        <hasArgTerm rdf:resource="#review.review_idReview"/>
+      </SimpleArgRelationship>
+    </hasArgument>
+    <hasProbDist>
+      <DeclarativeDist rdf:ID="review_res_Table">
+        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >[T = 0.53125, F = 0.46875]
+			</hasDeclaration>
+        <isProbDistOf rdf:resource="#Domain_Res.review_res"/>
+      </DeclarativeDist>
+    </hasProbDist>                                            </Domain_Res>
+                                                            </hasResidentNode>
+                                                            <hasResidentNode>
                                                               <Domain_Res rdf:ID="Domain_Res.review_rd">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >review_rd</rdfs:comment>
-    <isResidentNodeIn>
-      <Domain_MFrag rdf:ID="Domain_MFrag.review">
-        <hasResidentNode>
-          <Domain_Res rdf:ID="Domain_Res.review_npp">
-            <hasArgument>
-              <SimpleArgRelationship rdf:ID="review_npp_1">
-                <hasArgTerm>
-                  <OVariable rdf:ID="review.review_idReview">
-                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                    >review_idReview</rdfs:comment>
-                    <isArgTermIn>
-                      <SimpleArgRelationship rdf:ID="review_spamicity_1">
-                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                        >1</hasArgNumber>
-                        <isArgumentOf>
-                          <Domain_Res rdf:ID="Domain_Res.review_spamicity">
-                            <hasPossibleValues>
-                              <CategoricalRVState rdf:ID="low">
-                                <hasType>
-                                  <MetaEntity rdf:ID="CategoryLabel">
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="u3">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_idUser">
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u8">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u10">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues rdf:resource="#u3"/>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u7">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u2">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_idUser_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u6">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u1">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u9">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u5">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_idUser_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[u9 = 0.07317073170731707, u10 = 0.07317073170731707, u11 = 0.07317073170731707, u5 = 0.12195121951219512, u7 = 0.12195121951219512, u3 = 0.12195121951219512, u2 = 0.12195121951219512, u1 = 0.07317073170731707, u4 = 0.07317073170731707, u6 = 0.07317073170731707, u8 = 0.07317073170731707]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u11">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u4">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_idUser</rdfs:comment>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf rdf:resource="#u11"/>
-                                    <rdfs:comment rdf:datatype=
-                                    "http://www.w3.org/2001/XMLSchema#string"
-                                    >This MetaEntity should be assigned to the labels for the states of random variables whose domain is a list of categorical values</rdfs:comment>
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="high">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="T">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_npp"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_res">
-                                            <hasParent>
-                                              <Domain_Res rdf:ID="Domain_Res.review_od">
-                                                <hasPossibleValues rdf:resource="#F"/>
-                                                <hasPossibleValues rdf:resource="#T"/>
-                                                <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                                <isParentOf rdf:resource="#Domain_Res.review_res"/>
-                                                <rdfs:comment
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >review_od</rdfs:comment>
-                                                <hasArgument>
-                                                  <SimpleArgRelationship rdf:ID="review_od_1">
-                                                    <hasArgNumber
-                                                     rdf:datatype=
-                                                    "http://www.w3.org/2001/XMLSchema#int"
-                                                    >1</hasArgNumber>
-                                                    <isArgumentOf rdf:resource="#Domain_Res.review_od"/>
-                                                    <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                                  </SimpleArgRelationship>
-                                                </hasArgument>
-                                                <hasProbDist>
-                                                  <DeclarativeDist rdf:ID="review_od_Table">
-                                                    <hasDeclaration
-                                                     rdf:datatype=
-                                                    "http://www.w3.org/2001/XMLSchema#string"
-                                                    >[T = 0.46875, F = 0.53125]
-			</hasDeclaration>                                <isProbDistOf rdf:resource="#Domain_Res.review_od"/>
-                                                  </DeclarativeDist>
-                                                </hasProbDist>
-                                              </Domain_Res>
-                                            </hasParent>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_res</rdfs:comment>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_res_1">
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_res"/>
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_res_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >if any review_idReview have ( review_od = T ) [T = 0.8125, F = 0.1875]
-			else if any review_idReview have ( review_od = F ) [T = 0.2777777777777778, F = 0.7222222222222222]
-			else[ T = 0.5, F = 0.5]</hasDeclaration>     <isProbDistOf rdf:resource="#Domain_Res.review_res"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.user_acs"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_rd"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.user_nr">
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="user_nr_1">
-                                                <hasArgTerm rdf:resource="#user.user_idUser"/>
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <isArgumentOf rdf:resource="#Domain_Res.user_nr"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="user_nr_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.5416666666666666, F = 0.4583333333333333]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.user_nr"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >user_nr</rdfs:comment>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_od"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.user_bst">
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="user_bst_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.5416666666666666, F = 0.4583333333333333]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.user_bst"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >user_bst</rdfs:comment>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="user_bst_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#user.user_idUser"/>
-                                                <isArgumentOf rdf:resource="#Domain_Res.user_bst"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_etf">
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_etf</rdfs:comment>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_etf_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.53125, F = 0.46875]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.review_etf"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_etf_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_etf"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf rdf:resource="#u4"/>
-                                    <isTypeOf rdf:resource="#low"/>
-                                    <isTypeOf rdf:resource="#u5"/>
-                                    <isTypeOf rdf:resource="#u6"/>
-                                    <isTypeOf rdf:resource="#u9"/>
-                                    <hasType rdf:resource="#TypeLabel"/>
-                                    <isTypeOf rdf:resource="#u1"/>
-                                    <isTypeOf rdf:resource="#F"/>
-                                    <isTypeOf rdf:resource="#u7"/>
-                                    <isTypeOf rdf:resource="#u2"/>
-                                    <isTypeOf rdf:resource="#u8"/>
-                                    <isTypeOf rdf:resource="#u10"/>
-                                    <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                                    >!CategoryLabel</hasUID>
-                                  </MetaEntity>
-                                </hasType>
-                                <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
-                              </CategoricalRVState>
-                            </hasPossibleValues>
-                            <hasPossibleValues rdf:resource="#high"/>
-                            <hasArgument rdf:resource="#review_spamicity_1"/>
-                            <hasProbDist>
-                              <DeclarativeDist rdf:ID="review_spamicity_Table">
-                                <hasDeclaration rdf:datatype=
-                                "http://www.w3.org/2001/XMLSchema#string"
-                                >[high = 0.53125, low = 0.46875]
-			</hasDeclaration>            <isProbDistOf rdf:resource="#Domain_Res.review_spamicity"/>
-                              </DeclarativeDist>
-                            </hasProbDist>
-                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >review_spamicity</rdfs:comment>
-                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                          </Domain_Res>
-                        </isArgumentOf>
-                        <hasArgTerm rdf:resource="#review.review_idReview"/>
-                      </SimpleArgRelationship>
-                    </isArgTermIn>
-                    <isSubsBy>
-                      <MetaEntity rdf:ID="REVIEW_label">
-                        <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >!REVIEW_label</hasUID>
-                        <hasType rdf:resource="#TypeLabel"/>
-                        <subsOVar rdf:resource="#review.review_idReview"/>
-                      </MetaEntity>
-                    </isSubsBy>
-                    <isOVariableIn rdf:resource="#Domain_MFrag.review"/>
-                    <isArgTermIn rdf:resource="#review_res_1"/>
-                    <isArgTermIn rdf:resource="#review_npp_1"/>
-                    <isArgTermIn>
-                      <SimpleArgRelationship rdf:ID="review_rd_1">
-                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                        >1</hasArgNumber>
-                        <isArgumentOf rdf:resource="#Domain_Res.review_rd"/>
-                        <hasArgTerm rdf:resource="#review.review_idReview"/>
-                      </SimpleArgRelationship>
-                    </isArgTermIn>
-                    <isArgTermIn rdf:resource="#review_idUser_1"/>
-                    <isArgTermIn rdf:resource="#review_od_1"/>
-                    <isArgTermIn rdf:resource="#review_etf_1"/>
-                  </OVariable>
-                </hasArgTerm>
-                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                >1</hasArgNumber>
-                <isArgumentOf rdf:resource="#Domain_Res.review_npp"/>
-              </SimpleArgRelationship>
-            </hasArgument>
-            <hasProbDist>
-              <DeclarativeDist rdf:ID="review_npp_Table">
-                <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >[T = 0.40625, F = 0.59375]
-			</hasDeclaration>
-                <isProbDistOf rdf:resource="#Domain_Res.review_npp"/>
-              </DeclarativeDist>
-            </hasProbDist>
-            <hasPossibleValues rdf:resource="#F"/>
-            <hasPossibleValues rdf:resource="#T"/>
-            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >review_npp</rdfs:comment>
-          </Domain_Res>
-        </hasResidentNode>
-        <hasResidentNode rdf:resource="#Domain_Res.review_spamicity"/>
-        <isMFragOf>
-          <MTheory rdf:ID="ROOT_MTheory_1">
-            <hasMFrag rdf:resource="#Domain_MFrag.user"/>
-            <hasMFrag rdf:resource="#Domain_MFrag.review"/>
-          </MTheory>
-        </isMFragOf>
-        <hasResidentNode rdf:resource="#Domain_Res.review_od"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_idUser"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_etf"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_rd"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_res"/>
-        <hasOVariable rdf:resource="#review.review_idReview"/>
-      </Domain_MFrag>
-    </isResidentNodeIn>
+    <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
     <hasProbDist>
       <DeclarativeDist rdf:ID="review_rd_Table">
         <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -590,31 +333,499 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
     </hasProbDist>
     <hasPossibleValues rdf:resource="#F"/>
     <hasPossibleValues rdf:resource="#T"/>
-    <hasArgument rdf:resource="#review_rd_1"/>                </Domain_Res>
+    <hasInputInstance>
+      <Generative_input rdf:ID="IX4">
+        <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+        <isParentOf rdf:resource="#Domain_Res.review_spamicity"/>
+        <isInputInstanceOf rdf:resource="#Domain_Res.review_rd"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >IX4</rdfs:comment>
+        <hasArgument>
+          <SimpleArgRelationship rdf:ID="IX4_1">
+            <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+            >1</hasArgNumber>
+            <isArgumentOf rdf:resource="#IX4"/>
+            <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+          </SimpleArgRelationship>
+        </hasArgument>
+        <hasPossibleValues rdf:resource="#F"/>
+        <hasPossibleValues rdf:resource="#T"/>
+      </Generative_input>
+    </hasInputInstance>
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="review_rd_1">
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</hasArgNumber>
+        <hasArgTerm rdf:resource="#review.review_idReview"/>
+        <isArgumentOf rdf:resource="#Domain_Res.review_rd"/>
+      </SimpleArgRelationship>
+    </hasArgument>                                            </Domain_Res>
+                                                            </hasResidentNode>
+                                                            <hasResidentNode rdf:resource="#Domain_Res.review_etf"/>
+                                                            <hasResidentNode>
+                                                              <Domain_Res rdf:ID="Domain_Res.review_npp">
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="review_npp_1">
+        <hasArgTerm rdf:resource="#review.review_idReview"/>
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</hasArgNumber>
+        <isArgumentOf rdf:resource="#Domain_Res.review_npp"/>
+      </SimpleArgRelationship>
+    </hasArgument>
+    <hasProbDist>
+      <DeclarativeDist rdf:ID="review_npp_Table">
+        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >[T = 0.40625, F = 0.59375]
+			</hasDeclaration>
+        <isProbDistOf rdf:resource="#Domain_Res.review_npp"/>
+      </DeclarativeDist>
+    </hasProbDist>
+    <hasPossibleValues rdf:resource="#F"/>
+    <hasPossibleValues rdf:resource="#T"/>
+    <hasInputInstance rdf:resource="#IX2"/>
+    <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >review_npp</rdfs:comment>                                </Domain_Res>
+                                                            </hasResidentNode>
+                                                            <hasResidentNode>
+                                                              <Domain_Res rdf:ID="Domain_Res.review_od">
+    <hasPossibleValues rdf:resource="#F"/>
+    <hasPossibleValues rdf:resource="#T"/>
+    <hasInputInstance rdf:resource="#IX1"/>
+    <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >review_od</rdfs:comment>
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="review_od_1">
+        <isArgumentOf rdf:resource="#Domain_Res.review_od"/>
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</hasArgNumber>
+        <hasArgTerm rdf:resource="#review.review_idReview"/>
+      </SimpleArgRelationship>
+    </hasArgument>
+    <hasProbDist>
+      <DeclarativeDist rdf:ID="review_od_Table">
+        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >[T = 0.46875, F = 0.53125]
+			</hasDeclaration>
+        <isProbDistOf rdf:resource="#Domain_Res.review_od"/>
+      </DeclarativeDist>
+    </hasProbDist>                                            </Domain_Res>
+                                                            </hasResidentNode>
+                                                            <isMFragOf>
+                                                              <MTheory rdf:ID="ROOT_MTheory_1">
+    <hasMFrag rdf:resource="#Domain_MFrag.review_spamicity"/>
+    <hasMFrag>
+      <Domain_MFrag rdf:ID="Domain_MFrag.user">
+        <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+        <hasResidentNode>
+          <Domain_Res rdf:ID="Domain_Res.user_acs">
+            <hasArgument>
+              <SimpleArgRelationship rdf:ID="user_acs_1">
+                <hasArgTerm>
+                  <OVariable rdf:ID="user.user_idUser">
+                    <isArgTermIn rdf:resource="#user_acs_1"/>
+                    <isArgTermIn>
+                      <SimpleArgRelationship rdf:ID="user_nr_1">
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <isArgumentOf>
+                          <Domain_Res rdf:ID="Domain_Res.user_nr">
+                            <hasProbDist>
+                              <DeclarativeDist rdf:ID="user_nr_Table">
+                                <hasDeclaration rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#string"
+                                >[T = 0.5416666666666666, F = 0.4583333333333333]
+			</hasDeclaration>            <isProbDistOf rdf:resource="#Domain_Res.user_nr"/>
+                              </DeclarativeDist>
+                            </hasProbDist>
+                            <hasPossibleValues rdf:resource="#F"/>
+                            <hasPossibleValues rdf:resource="#T"/>
+                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
+                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >user_nr</rdfs:comment>
+                            <hasArgument rdf:resource="#user_nr_1"/>
+                          </Domain_Res>
+                        </isArgumentOf>
+                        <hasArgTerm rdf:resource="#user.user_idUser"/>
+                      </SimpleArgRelationship>
+                    </isArgTermIn>
+                    <isArgTermIn>
+                      <SimpleArgRelationship rdf:ID="user_bst_1">
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <isArgumentOf>
+                          <Domain_Res rdf:ID="Domain_Res.user_bst">
+                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
+                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >user_bst</rdfs:comment>
+                            <hasArgument rdf:resource="#user_bst_1"/>
+                            <hasProbDist>
+                              <DeclarativeDist rdf:ID="user_bst_Table">
+                                <hasDeclaration rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#string"
+                                >[T = 0.5416666666666666, F = 0.4583333333333333]
+			</hasDeclaration>            <isProbDistOf rdf:resource="#Domain_Res.user_bst"/>
+                              </DeclarativeDist>
+                            </hasProbDist>
+                            <hasPossibleValues rdf:resource="#F"/>
+                            <hasPossibleValues rdf:resource="#T"/>
+                            <hasInputInstance>
+                              <Generative_input rdf:ID="IX6">
+                                <hasArgument>
+                                  <SimpleArgRelationship rdf:ID="IX6_1">
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <isArgumentOf rdf:resource="#IX6"/>
+                                    <hasArgTerm rdf:resource="#review_spamicity.user_idUser"/>
+                                  </SimpleArgRelationship>
+                                </hasArgument>
+                                <hasPossibleValues rdf:resource="#F"/>
+                                <hasPossibleValues rdf:resource="#T"/>
+                                <isParentOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                <isInputInstanceOf rdf:resource="#Domain_Res.user_bst"/>
+                                <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >IX6</rdfs:comment>
+                              </Generative_input>
+                            </hasInputInstance>
+                          </Domain_Res>
+                        </isArgumentOf>
+                        <hasArgTerm rdf:resource="#user.user_idUser"/>
+                      </SimpleArgRelationship>
+                    </isArgTermIn>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >user_idUser</rdfs:comment>
+                    <isSubsBy rdf:resource="#USER_label"/>
+                    <isOVariableIn rdf:resource="#Domain_MFrag.user"/>
+                  </OVariable>
+                </hasArgTerm>
+                <isArgumentOf rdf:resource="#Domain_Res.user_acs"/>
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</hasArgNumber>
+              </SimpleArgRelationship>
+            </hasArgument>
+            <hasProbDist>
+              <DeclarativeDist rdf:ID="user_acs_Table">
+                <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >[T = 0.375, F = 0.625]
+			</hasDeclaration>
+                <isProbDistOf rdf:resource="#Domain_Res.user_acs"/>
+              </DeclarativeDist>
+            </hasProbDist>
+            <hasPossibleValues rdf:resource="#F"/>
+            <hasPossibleValues rdf:resource="#T"/>
+            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >user_acs</rdfs:comment>
+          </Domain_Res>
+        </hasResidentNode>
+        <hasResidentNode rdf:resource="#Domain_Res.user_nr"/>
+        <hasResidentNode rdf:resource="#Domain_Res.user_bst"/>
+        <hasOVariable rdf:resource="#user.user_idUser"/>
+      </Domain_MFrag>
+    </hasMFrag>
+    <hasMFrag rdf:resource="#Domain_MFrag.review"/>           </MTheory>
+                                                            </isMFragOf>
+                                                          </Domain_MFrag>
+                                                        </isResidentNodeIn>
+                                                      </Domain_Res>
+                                                    </isInputInstanceOf>
+                                                  </Generative_input>
+                                                </hasParent>
+                                                <rdfs:comment
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >review_spamicity</rdfs:comment>
+                                                <hasPossibleValues>
+                                                  <CategoricalRVState rdf:ID="high">
+                                                    <hasType rdf:resource="#CategoryLabel"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                  </CategoricalRVState>
+                                                </hasPossibleValues>
+                                                <hasParent rdf:resource="#IX1"/>
+                                                <hasParent rdf:resource="#IX5"/>
+                                                <hasParent rdf:resource="#IX4"/>
+                                                <hasProbDist>
+                                                  <DeclarativeDist rdf:ID="review_spamicity_Table">
+                                                    <hasDeclaration
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.9166666666666666, low = 0.08333333333333333]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.038461538461538464, low = 0.9615384615384616]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.9285714285714286, low = 0.07142857142857142]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.9166666666666666, low = 0.08333333333333333]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.08333333333333333, low = 0.9166666666666666]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.9285714285714286, low = 0.07142857142857142]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.045454545454545456, low = 0.9545454545454546]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.9545454545454546, low = 0.045454545454545456]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.9166666666666666, low = 0.08333333333333333]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.9285714285714286, low = 0.07142857142857142]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.07142857142857142, low = 0.9285714285714286]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.038461538461538464, low = 0.9615384615384616]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.045454545454545456, low = 0.9545454545454546]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.07142857142857142, low = 0.9285714285714286]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.08333333333333333, low = 0.9166666666666666]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.08333333333333333, low = 0.9166666666666666]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.9285714285714286, low = 0.07142857142857142]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.9615384615384616, low = 0.038461538461538464]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = F ) [high = 0.9545454545454546, low = 0.045454545454545456]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = F &amp; review_etf = F &amp; review_rd = T &amp; review_res = F &amp; user_bst = T ) [high = 0.07142857142857142, low = 0.9285714285714286]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = T &amp; review_rd = T &amp; review_res = F &amp; user_bst = F ) [high = 0.9166666666666666, low = 0.08333333333333333]
+			else if any review_idReview.user_idUser have ( review_od = F &amp; review_npp = T &amp; review_etf = F &amp; review_rd = T &amp; review_res = T &amp; user_bst = T ) [high = 0.5, low = 0.5]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = F &amp; review_etf = T &amp; review_rd = F &amp; review_res = T &amp; user_bst = T ) [high = 0.9615384615384616, low = 0.038461538461538464]
+			else if any review_idReview.user_idUser have ( review_od = T &amp; review_npp = T &amp; review_etf = F &amp; review_rd = F &amp; review_res = F &amp; user_bst = F ) [high = 0.5, low = 0.5]
+			else[ high = 0.5, low = 0.5]</hasDeclaration>    <isProbDistOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                  </DeclarativeDist>
+                                                </hasProbDist>
+                                                <isResidentNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                                <hasPossibleValues>
+                                                  <CategoricalRVState rdf:ID="low">
+                                                    <hasType rdf:resource="#CategoryLabel"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                  </CategoricalRVState>
+                                                </hasPossibleValues>
+                                                <hasParent rdf:resource="#IX6"/>
+                                                <hasParent rdf:resource="#IX2"/>
+                                                <hasArgument>
+                                                  <SimpleArgRelationship rdf:ID="review_spamicity_1">
+                                                    <hasArgNumber
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#int"
+                                                    >1</hasArgNumber>
+                                                    <isArgumentOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                    <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+                                                  </SimpleArgRelationship>
+                                                </hasArgument>
+                                              </Domain_Res>
+                                            </isParentOf>
+                                            <isInputInstanceOf rdf:resource="#Domain_Res.review_res"/>
+                                            <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                            <rdfs:comment rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >IX5</rdfs:comment>
+                                            <hasArgument rdf:resource="#IX5_1"/>
+                                          </Generative_input>
+                                        </isArgumentOf>
+                                      </SimpleArgRelationship>
+                                    </isArgTermIn>
+                                    <isArgTermIn>
+                                      <SimpleArgRelationship rdf:ID="IX1_1">
+                                        <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+                                        <hasArgNumber rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#int"
+                                        >1</hasArgNumber>
+                                        <isArgumentOf rdf:resource="#IX1"/>
+                                      </SimpleArgRelationship>
+                                    </isArgTermIn>
+                                    <isOVariableIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                    <isArgTermIn rdf:resource="#review_spamicity_1"/>
+                                    <isSubsBy rdf:resource="#REVIEW_label"/>
+                                    <rdfs:comment rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >review_idReview</rdfs:comment>
+                                    <isArgTermIn rdf:resource="#IX4_1"/>
+                                    <isArgTermIn>
+                                      <SimpleArgRelationship rdf:ID="IX2_1">
+                                        <isArgumentOf rdf:resource="#IX2"/>
+                                        <hasArgNumber rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#int"
+                                        >1</hasArgNumber>
+                                        <hasArgTerm rdf:resource="#review_spamicity.review_idReview"/>
+                                      </SimpleArgRelationship>
+                                    </isArgTermIn>
+                                    <isArgTermIn rdf:resource="#IX3_1"/>
+                                  </OVariable>
+                                </subsOVar>
+                                <subsOVar rdf:resource="#review.review_idReview"/>
+                              </MetaEntity>
+                            </isSubsBy>
+                            <isOVariableIn rdf:resource="#Domain_MFrag.review"/>
+                            <isArgTermIn rdf:resource="#review_res_1"/>
+                            <isArgTermIn rdf:resource="#review_npp_1"/>
+                            <isArgTermIn rdf:resource="#review_rd_1"/>
+                            <isArgTermIn rdf:resource="#review_idUser_1"/>
+                            <isArgTermIn rdf:resource="#review_od_1"/>
+                            <isArgTermIn rdf:resource="#review_etf_1"/>
+                          </OVariable>
+                        </hasArgTerm>
+                      </SimpleArgRelationship>
+                    </hasArgument>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u6">
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                        <hasType rdf:resource="#CategoryLabel"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u1">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u9">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u5">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasProbDist>
+                      <DeclarativeDist rdf:ID="review_idUser_Table">
+                        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >[u9 = 0.07317073170731707, u10 = 0.07317073170731707, u11 = 0.07317073170731707, u5 = 0.12195121951219512, u7 = 0.12195121951219512, u3 = 0.12195121951219512, u2 = 0.12195121951219512, u1 = 0.07317073170731707, u4 = 0.07317073170731707, u6 = 0.07317073170731707, u8 = 0.07317073170731707]
+			</hasDeclaration>    <isProbDistOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </DeclarativeDist>
+                    </hasProbDist>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u11">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="u4">
+                        <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
+                        <hasType rdf:resource="#CategoryLabel"/>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >review_idUser</rdfs:comment>
+                  </Domain_Res>
+                </isPossibleValueOf>
+                <hasType rdf:resource="#CategoryLabel"/>
+              </CategoricalRVState>
+            </isTypeOf>
+            <isTypeOf rdf:resource="#u11"/>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >This MetaEntity should be assigned to the labels for the states of random variables whose domain is a list of categorical values</rdfs:comment>
+            <isTypeOf rdf:resource="#high"/>
+            <isTypeOf rdf:resource="#T"/>
+            <isTypeOf rdf:resource="#u4"/>
+            <isTypeOf rdf:resource="#low"/>
+            <isTypeOf rdf:resource="#u5"/>
+            <isTypeOf rdf:resource="#u6"/>
+            <isTypeOf rdf:resource="#u9"/>
+            <hasType rdf:resource="#TypeLabel"/>
+            <isTypeOf rdf:resource="#u1"/>
+            <isTypeOf rdf:resource="#F"/>
+            <isTypeOf rdf:resource="#u7"/>
+            <isTypeOf rdf:resource="#u2"/>
+            <isTypeOf rdf:resource="#u8"/>
+            <isTypeOf rdf:resource="#u10"/>
+            <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >!CategoryLabel</hasUID>
+          </MetaEntity>
+        </hasType>
+        <isPossibleValueOf rdf:resource="#IX6"/>
+        <isPossibleValueOf rdf:resource="#IX2"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.review_npp"/>
+        <isPossibleValueOf rdf:resource="#IX3"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.review_res"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.user_acs"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.review_rd"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.user_nr"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.review_od"/>
+        <isPossibleValueOf rdf:resource="#IX1"/>
+        <isPossibleValueOf rdf:resource="#IX5"/>
+        <isPossibleValueOf rdf:resource="#IX4"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.user_bst"/>
+        <isPossibleValueOf rdf:resource="#Domain_Res.review_etf"/>
+      </CategoricalRVState>
+    </hasPossibleValues>
+    <hasArgument rdf:resource="#IX2_1"/>
+    <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+    <isInputInstanceOf rdf:resource="#Domain_Res.review_npp"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IX2</rdfs:comment>
+    <isParentOf rdf:resource="#Domain_Res.review_spamicity"/> </Generative_input>
                                                             </isPossibleValueOf>
+                                                            <isPossibleValueOf rdf:resource="#Domain_Res.review_rd"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.review_npp"/>
+                                                            <isPossibleValueOf rdf:resource="#IX1"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.review_res"/>
+                                                            <isPossibleValueOf rdf:resource="#IX3"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.review_etf"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.user_acs"/>
                                                             <hasType rdf:resource="#CategoryLabel"/>
+                                                            <isPossibleValueOf rdf:resource="#IX6"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.review_od"/>
+                                                            <isPossibleValueOf rdf:resource="#IX4"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.user_bst"/>
+                                                            <isPossibleValueOf rdf:resource="#IX5"/>
                                                             <isPossibleValueOf rdf:resource="#Domain_Res.user_nr"/>
                                                           </CategoricalRVState>
                                                         </hasPossibleValues>
                                                         <hasPossibleValues rdf:resource="#T"/>
-                                                        <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                                      </Domain_Res>
-                                                    </hasResidentNode>
-                                                    <hasResidentNode rdf:resource="#Domain_Res.user_nr"/>
-                                                    <hasResidentNode rdf:resource="#Domain_Res.user_bst"/>
-                                                    <hasOVariable rdf:resource="#user.user_idUser"/>
+                                                        <hasArgument rdf:resource="#IX1_1"/>
+                                                        <isInputInstanceOf rdf:resource="#Domain_Res.review_od"/>
+                                                        <isInputNodeIn rdf:resource="#Domain_MFrag.review_spamicity"/>
+                                                        <rdfs:comment
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >IX1</rdfs:comment>
+                                                        <isParentOf rdf:resource="#Domain_Res.review_spamicity"/>
+                                                      </Generative_input>
+                                                    </hasInputNode>
+                                                    <hasInputNode rdf:resource="#IX4"/>
+                                                    <hasInputNode rdf:resource="#IX5"/>
+                                                    <hasOVariable rdf:resource="#review_spamicity.review_idReview"/>
+                                                    <hasInputNode rdf:resource="#IX2"/>
+                                                    <hasInputNode rdf:resource="#IX3"/>
                                                     <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                                    <hasResidentNode rdf:resource="#Domain_Res.review_spamicity"/>
+                                                    <hasOVariable rdf:resource="#review_spamicity.user_idUser"/>
+                                                    <hasInputNode rdf:resource="#IX6"/>
                                                   </Domain_MFrag>
                                                 </isOVariableIn>
-                                                <isArgTermIn rdf:resource="#user_acs_1"/>
-                                                <isArgTermIn rdf:resource="#user_nr_1"/>
-                                                <isArgTermIn rdf:resource="#user_bst_1"/>
+                                                <isArgTermIn rdf:resource="#IX6_1"/>
                                                 <rdfs:comment
                                                  rdf:datatype=
                                                 "http://www.w3.org/2001/XMLSchema#string"
@@ -622,6 +833,7 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                                                 <isSubsBy rdf:resource="#USER_label"/>
                                               </OVariable>
                                             </subsOVar>
+                                            <subsOVar rdf:resource="#user.user_idUser"/>
                                             <hasUID rdf:datatype=
                                             "http://www.w3.org/2001/XMLSchema#string"
                                             >!USER_label</hasUID>
