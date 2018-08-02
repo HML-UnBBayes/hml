@@ -16,7 +16,7 @@ import unbbayes.prs.mebn.MultiEntityBayesianNetwork;
 public class Learning_test_for_spam {
     public void run() throws SQLException {
         //1. Connect Relational DB (RDB)
-        String schema = "databaseemna";
+        String schema = "spamdatabase";
         String addr = "Localhost";
         String rt = "root";		// <- Change DB user name
         String pw = "jesus";	// <- Change DB password 

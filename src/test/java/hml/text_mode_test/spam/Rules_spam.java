@@ -30,8 +30,8 @@ extends ProbabilisticRules {
         nodeList.add("review.review_res"); 
         
         nodeList.add("user.user_bst"); 
-//        nodeList.add("user.user_nr"); 
-//        nodeList.add("user.user_acs");
+        nodeList.add("user.user_nr"); 
+        nodeList.add("user.user_acs");
          
         m.addParents("review.review_spamicity", nodeList);   
     } 
