@@ -4,6 +4,7 @@ import java.io.File;
 import java.sql.SQLException;
  
 import hmlp_tool.OpenMEBNeditor;
+import mebn_ln.converter.ConvertFromMTheoryToSBN;
 import mebn_ln.core.MTheory_Learning; 
 import mebn_rm.MEBN.MTheory.MRoot;
 import mebn_rm.MEBN.MTheory.MTheory;
@@ -48,7 +49,7 @@ public class Learning_test_for_watering_system_dynamic {
         System.out.println("Learning Completed!");
         System.out.println("****************************************************************");
          
-        // Show MEBN window 
+        // Convert from m to a MEBN in UnBBayes 
         NetworkWindow netWindow = (NetworkWindow) new OpenMEBNeditor().run(m); 
   	
 		UbfIO ubf = UbfIO.getInstance(); 
@@ -59,6 +60,15 @@ public class Learning_test_for_watering_system_dynamic {
 		catch(Exception e){
 			e.printStackTrace(); 
 		} 
+		
+		System.out.println(m);
+		
+		// Generate an SSBN from m
+		String file = new ConvertFromMTheoryToSBN().save(m , "SSBN");
+        System.out.println("************************************************************************************");
+        System.out.println(file);
+        System.out.println("************************************************************************************");
+      
 		 
 //        System.out.println(m); 
     }

@@ -99,6 +99,7 @@ extends ProbabilisticRules {
                 }
                 
                 // Check the parent node which is the same type of the childMNode
+                // Recursive MNode: land_state_Dry
                 if (parentMNode.name.equalsIgnoreCase("land_state_Dry")) {
                 	System.out.println(parentMNode.name);
                 	
@@ -122,10 +123,18 @@ extends ProbabilisticRules {
    	                
    	                // Create a new parent input MNode from a current parent MNode
    	                // Both have different OVs
-   	                MNode ip = new MDNode(fp, parentMNode, listOV);
+                    MNode ip = null; 
+                    if (parentMNode.isContinuous()) {
+   	                	ip = new MCNode(fp, parentMNode, listOV);
+                    } else if (parentMNode.isDiscrete()) {
+   	                	ip = new MDNode(fp, parentMNode, listOV);
+                    } 
    	                
    	                // The new column name for the training csv data is set 
    	                ip.columnName = newTableName + "_" + mNodeP;
+   	                
+   	                // Change the MFrag of the recursive node ip to the new MFrag of the current node, because they are in the same MFrag. 
+   	                ip.mFrag = newMFrag;
    	                
    	                newChild.setInputParents(ip);
                 } else { // The parent node is not the same type of the childMNode. 
@@ -147,7 +156,12 @@ extends ProbabilisticRules {
 	                
 	                // Create a new parent input MNode from a current parent MNode
 	                // Both have different OVs
-	                MNode ip = new MDNode(fp, parentMNode, listOV);
+	                MNode ip = null;
+	                if (parentMNode.isContinuous()) {
+	                	ip = new MCNode(fp, parentMNode, listOV);
+	                } else if (parentMNode.isDiscrete()) {
+	                	ip = new MDNode(fp, parentMNode, listOV);
+	                } 
 	                
 	                // The new column name for the training csv data is set 
    	                ip.columnName = ip.name;

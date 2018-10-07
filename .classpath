@@ -53,5 +53,6 @@
 	<classpathentry kind="lib" path="lib/mebn_ln.jar"/>
 	<classpathentry kind="lib" path="lib/mebn_rm.jar" sourcepath="/MEBN_RM"/>
 	<classpathentry kind="lib" path="lib/modelerlib.jar"/>
+	<classpathentry kind="lib" path="lib/cps2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
