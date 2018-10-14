@@ -135,6 +135,1183 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                                   </BuiltInRV>
                                 </isPossibleValueOf>
                                 <isPossibleValueOf>
+                                  <Domain_Res rdf:ID="Domain_Res.predecessor">
+                                    <hasPossibleValues rdf:resource="#absurd"/>
+                                    <hasPossibleValues rdf:resource="#true"/>
+                                    <hasPossibleValues rdf:resource="#false"/>
+                                    <hasArgument>
+                                      <SimpleArgRelationship rdf:ID="predecessor_2">
+                                        <hasArgTerm>
+                                          <OVariable rdf:ID="predecessor.predecessor_idTime">
+                                            <isOVariableIn>
+                                              <Domain_MFrag rdf:ID="Domain_MFrag.predecessor">
+                                                <isMFragOf>
+                                                  <MTheory rdf:ID="ROOT_MTheory_1">
+                                                    <hasMFrag>
+                                                      <Domain_MFrag rdf:ID="Domain_MFrag.land_state_Dry">
+                                                        <hasInputNode>
+                                                          <Generative_input rdf:ID="IX1">
+                                                            <rdfs:comment
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >IX1</rdfs:comment>
+                                                            <hasArgument>
+                                                              <SimpleArgRelationship rdf:ID="IX1_1">
+    <hasArgTerm>
+      <OVariable rdf:ID="land_state_Dry.plant_state_idPlant">
+        <isSubsBy>
+          <MetaEntity rdf:ID="PLANT_label">
+            <subsOVar rdf:resource="#land_state_Dry.plant_state_idPlant"/>
+            <subsOVar>
+              <OVariable rdf:ID="plant_state.plant_state_idPlant">
+                <isArgTermIn>
+                  <SimpleArgRelationship rdf:ID="plant_state_Health_1">
+                    <hasArgTerm rdf:resource="#plant_state.plant_state_idPlant"/>
+                    <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                    >1</hasArgNumber>
+                    <isArgumentOf>
+                      <Domain_Res rdf:ID="Domain_Res.plant_state_Health">
+                        <hasArgument>
+                          <SimpleArgRelationship rdf:ID="plant_state_Health_3">
+                            <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                            >3</hasArgNumber>
+                            <hasArgTerm>
+                              <OVariable rdf:ID="plant_state.plant_state_idTime">
+                                <isSubsBy>
+                                  <MetaEntity rdf:ID="TIME_label">
+                                    <subsOVar>
+                                      <OVariable rdf:ID="environmental_factors.environmental_factors_idTime">
+                                        <isOVariableIn>
+                                          <Domain_MFrag rdf:ID="Domain_MFrag.environmental_factors">
+                                            <hasResidentNode>
+                                              <Domain_Res rdf:ID="Domain_Res.environmental_factors_Rain">
+                                                <hasPossibleValues>
+                                                  <MetaEntity rdf:ID="Number_label">
+                                                    <isPossibleValueOf>
+                                                      <Domain_Res rdf:ID="Domain_Res.environmental_factors_Light">
+                                                        <isResidentNodeIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                                        <rdfs:comment
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >environmental_factors_Light</rdfs:comment>
+                                                        <hasProbDist>
+                                                          <DeclarativeDist rdf:ID="environmental_factors_Light_Table">
+                                                            <hasDeclaration
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >NormalDist( 579.9995110157812, 0.0006510993189781788)</hasDeclaration>
+                                                            <isProbDistOf rdf:resource="#Domain_Res.environmental_factors_Light"/>
+                                                          </DeclarativeDist>
+                                                        </hasProbDist>
+                                                        <hasPossibleValues rdf:resource="#Number_label"/>
+                                                        <hasInputInstance>
+                                                          <Generative_input rdf:ID="IX7">
+                                                            <isInputInstanceOf rdf:resource="#Domain_Res.environmental_factors_Light"/>
+                                                            <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                                            <rdfs:comment
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >IX7</rdfs:comment>
+                                                            <isParentOf>
+                                                              <Domain_Res rdf:ID="Domain_Res.land_state_Dry">
+    <hasParent>
+      <Generative_input rdf:ID="IX4">
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >IX4</rdfs:comment>
+        <hasPossibleValues>
+          <CategoricalRVState rdf:ID="Summer">
+            <isPossibleValueOf rdf:resource="#IX4"/>
+            <isPossibleValueOf>
+              <Domain_Res rdf:ID="Domain_Res.time_Season">
+                <hasPossibleValues>
+                  <CategoricalRVState rdf:ID="Fall">
+                    <hasType>
+                      <MetaEntity rdf:ID="CategoryLabel">
+                        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >This MetaEntity should be assigned to the labels for the states of random variables whose domain is a list of categorical values</rdfs:comment>
+                        <isTypeOf>
+                          <CategoricalRVState rdf:ID="Outdoor">
+                            <hasType rdf:resource="#CategoryLabel"/>
+                            <isPossibleValueOf>
+                              <Generative_input rdf:ID="IX3">
+                                <hasPossibleValues>
+                                  <CategoricalRVState rdf:ID="Indoor">
+                                    <isPossibleValueOf rdf:resource="#IX3"/>
+                                    <isPossibleValueOf>
+                                      <Domain_Res rdf:ID="Domain_Res.region_LocationType">
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >region_LocationType</rdfs:comment>
+                                        <isResidentNodeIn>
+                                          <Domain_MFrag rdf:ID="Domain_MFrag.region">
+                                            <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                            <hasOVariable>
+                                              <OVariable rdf:ID="region.region_idRegion">
+                                                <isOVariableIn rdf:resource="#Domain_MFrag.region"/>
+                                                <isSubsBy>
+                                                  <MetaEntity rdf:ID="REGION_label">
+                                                    <subsOVar>
+                                                      <OVariable rdf:ID="land_state_Dry.land_state_idRegion">
+                                                        <isSubsBy rdf:resource="#REGION_label"/>
+                                                        <isArgTermIn>
+                                                          <SimpleArgRelationship rdf:ID="IX3_1">
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</hasArgNumber>
+                                                            <isArgumentOf rdf:resource="#IX3"/>
+                                                            <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                          </SimpleArgRelationship>
+                                                        </isArgTermIn>
+                                                        <isArgTermIn>
+                                                          <SimpleArgRelationship rdf:ID="IX7_1">
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</hasArgNumber>
+                                                            <isArgumentOf rdf:resource="#IX7"/>
+                                                            <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                          </SimpleArgRelationship>
+                                                        </isArgTermIn>
+                                                        <isArgTermIn>
+                                                          <SimpleArgRelationship rdf:ID="IX2_2">
+                                                            <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                            <isArgumentOf>
+                                                              <Generative_input rdf:ID="IX2">
+    <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+    <isInputInstanceOf rdf:resource="#Domain_Res.plant_state_Health"/>
+    <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >IX2</rdfs:comment>
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="IX2_3">
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >3</hasArgNumber>
+        <isArgumentOf rdf:resource="#IX2"/>
+        <hasArgTerm>
+          <OVariable rdf:ID="land_state_Dry.land_state_P_idPrevTime">
+            <isOVariableIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+            <isSubsBy rdf:resource="#TIME_label"/>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX9_2">
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</hasArgNumber>
+                <isArgumentOf>
+                  <Generative_input rdf:ID="IX9">
+                    <hasPossibleValues rdf:resource="#Number_label"/>
+                    <hasArgument rdf:resource="#IX9_2"/>
+                    <hasArgument>
+                      <SimpleArgRelationship rdf:ID="IX9_1">
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                        <isArgumentOf rdf:resource="#IX9"/>
+                      </SimpleArgRelationship>
+                    </hasArgument>
+                    <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                    <isInputInstanceOf>
+                      <Domain_Res rdf:ID="Domain_Res.environmental_factors_Humidity">
+                        <hasProbDist>
+                          <DeclarativeDist rdf:ID="environmental_factors_Humidity_Table">
+                            <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >NormalDist( 49.99898047042756, 0.0006777827502100391)</hasDeclaration>
+                            <isProbDistOf rdf:resource="#Domain_Res.environmental_factors_Humidity"/>
+                          </DeclarativeDist>
+                        </hasProbDist>
+                        <hasPossibleValues rdf:resource="#Number_label"/>
+                        <hasInputInstance rdf:resource="#IX9"/>
+                        <hasArgument>
+                          <SimpleArgRelationship rdf:ID="environmental_factors_Humidity_2">
+                            <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                            >2</hasArgNumber>
+                            <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Humidity"/>
+                            <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                          </SimpleArgRelationship>
+                        </hasArgument>
+                        <hasArgument>
+                          <SimpleArgRelationship rdf:ID="environmental_factors_Humidity_1">
+                            <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                            >1</hasArgNumber>
+                            <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Humidity"/>
+                            <hasArgTerm>
+                              <OVariable rdf:ID="environmental_factors.environmental_factors_idRegion">
+                                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >environmental_factors_idRegion</rdfs:comment>
+                                <isArgTermIn>
+                                  <SimpleArgRelationship rdf:ID="environmental_factors_Rain_1">
+                                    <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Rain"/>
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                  </SimpleArgRelationship>
+                                </isArgTermIn>
+                                <isArgTermIn rdf:resource="#environmental_factors_Humidity_1"/>
+                                <isArgTermIn>
+                                  <SimpleArgRelationship rdf:ID="environmental_factors_Wind_1">
+                                    <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <isArgumentOf>
+                                      <Domain_Res rdf:ID="Domain_Res.environmental_factors_Wind">
+                                        <isResidentNodeIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >environmental_factors_Wind</rdfs:comment>
+                                        <hasProbDist>
+                                          <DeclarativeDist rdf:ID="environmental_factors_Wind_Table">
+                                            <hasDeclaration rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >NormalDist( 5.001091614297693, 0.0006925542423294644)</hasDeclaration>
+                                            <isProbDistOf rdf:resource="#Domain_Res.environmental_factors_Wind"/>
+                                          </DeclarativeDist>
+                                        </hasProbDist>
+                                        <hasPossibleValues rdf:resource="#Number_label"/>
+                                        <hasInputInstance>
+                                          <Generative_input rdf:ID="IX8">
+                                            <hasPossibleValues rdf:resource="#Number_label"/>
+                                            <hasArgument>
+                                              <SimpleArgRelationship rdf:ID="IX8_2">
+                                                <hasArgNumber
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >2</hasArgNumber>
+                                                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                                                <isArgumentOf rdf:resource="#IX8"/>
+                                              </SimpleArgRelationship>
+                                            </hasArgument>
+                                            <hasArgument>
+                                              <SimpleArgRelationship rdf:ID="IX8_1">
+                                                <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                <hasArgNumber
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</hasArgNumber>
+                                                <isArgumentOf rdf:resource="#IX8"/>
+                                              </SimpleArgRelationship>
+                                            </hasArgument>
+                                            <isInputInstanceOf rdf:resource="#Domain_Res.environmental_factors_Wind"/>
+                                            <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                            <rdfs:comment rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >IX8</rdfs:comment>
+                                            <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                          </Generative_input>
+                                        </hasInputInstance>
+                                        <hasArgument>
+                                          <SimpleArgRelationship rdf:ID="environmental_factors_Wind_2">
+                                            <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                                            <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Wind"/>
+                                            <hasArgNumber rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#int"
+                                            >2</hasArgNumber>
+                                          </SimpleArgRelationship>
+                                        </hasArgument>
+                                        <hasArgument rdf:resource="#environmental_factors_Wind_1"/>
+                                      </Domain_Res>
+                                    </isArgumentOf>
+                                  </SimpleArgRelationship>
+                                </isArgTermIn>
+                                <isArgTermIn>
+                                  <SimpleArgRelationship rdf:ID="environmental_factors_Light_1">
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Light"/>
+                                    <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                  </SimpleArgRelationship>
+                                </isArgTermIn>
+                                <isArgTermIn>
+                                  <SimpleArgRelationship rdf:ID="environmental_factors_Temperature_1">
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <isArgumentOf>
+                                      <Domain_Res rdf:ID="Domain_Res.environmental_factors_Temperature">
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >environmental_factors_Temperature</rdfs:comment>
+                                        <hasArgument>
+                                          <SimpleArgRelationship rdf:ID="environmental_factors_Temperature_2">
+                                            <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Temperature"/>
+                                            <hasArgNumber rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#int"
+                                            >2</hasArgNumber>
+                                            <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                                          </SimpleArgRelationship>
+                                        </hasArgument>
+                                        <hasArgument rdf:resource="#environmental_factors_Temperature_1"/>
+                                        <hasProbDist>
+                                          <DeclarativeDist rdf:ID="environmental_factors_Temperature_Table">
+                                            <hasDeclaration rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >NormalDist( 35.99997218284985, 0.0006475851724370023)</hasDeclaration>
+                                            <isProbDistOf rdf:resource="#Domain_Res.environmental_factors_Temperature"/>
+                                          </DeclarativeDist>
+                                        </hasProbDist>
+                                        <hasPossibleValues rdf:resource="#Number_label"/>
+                                        <hasInputInstance>
+                                          <Generative_input rdf:ID="IX6">
+                                            <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                            <rdfs:comment rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >IX6</rdfs:comment>
+                                            <hasPossibleValues rdf:resource="#Number_label"/>
+                                            <hasArgument>
+                                              <SimpleArgRelationship rdf:ID="IX6_2">
+                                                <isArgumentOf rdf:resource="#IX6"/>
+                                                <hasArgNumber
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >2</hasArgNumber>
+                                                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                                              </SimpleArgRelationship>
+                                            </hasArgument>
+                                            <hasArgument>
+                                              <SimpleArgRelationship rdf:ID="IX6_1">
+                                                <isArgumentOf rdf:resource="#IX6"/>
+                                                <hasArgNumber
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#int"
+                                                >1</hasArgNumber>
+                                                <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                              </SimpleArgRelationship>
+                                            </hasArgument>
+                                            <isInputInstanceOf rdf:resource="#Domain_Res.environmental_factors_Temperature"/>
+                                            <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                          </Generative_input>
+                                        </hasInputInstance>
+                                        <isResidentNodeIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                      </Domain_Res>
+                                    </isArgumentOf>
+                                    <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                  </SimpleArgRelationship>
+                                </isArgTermIn>
+                                <isOVariableIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                <isSubsBy rdf:resource="#REGION_label"/>
+                              </OVariable>
+                            </hasArgTerm>
+                          </SimpleArgRelationship>
+                        </hasArgument>
+                        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >environmental_factors_Humidity</rdfs:comment>
+                        <isResidentNodeIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                      </Domain_Res>
+                    </isInputInstanceOf>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >IX9</rdfs:comment>
+                    <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                  </Generative_input>
+                </isArgumentOf>
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="contextNodeName1_1">
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</hasArgNumber>
+                <isArgumentOf>
+                  <Context rdf:ID="contextNodeName1">
+                    <hasPossibleValues rdf:resource="#absurd"/>
+                    <hasPossibleValues rdf:resource="#true"/>
+                    <hasPossibleValues rdf:resource="#false"/>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >predecessor</rdfs:comment>
+                    <isContextInstanceOf rdf:resource="#Domain_Res.predecessor"/>
+                    <hasArgument>
+                      <SimpleArgRelationship rdf:ID="contextNodeName1_2">
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >2</hasArgNumber>
+                        <isArgumentOf rdf:resource="#contextNodeName1"/>
+                        <hasArgTerm>
+                          <OVariable rdf:ID="land_state_Dry.land_state_idTime">
+                            <isArgTermIn rdf:resource="#contextNodeName1_2"/>
+                            <isArgTermIn>
+                              <SimpleArgRelationship rdf:ID="land_state_Dry_2">
+                                <isArgumentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                                >2</hasArgNumber>
+                                <hasArgTerm rdf:resource="#land_state_Dry.land_state_idTime"/>
+                              </SimpleArgRelationship>
+                            </isArgTermIn>
+                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >land_state_idTime</rdfs:comment>
+                            <isSubsBy rdf:resource="#TIME_label"/>
+                            <isOVariableIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                          </OVariable>
+                        </hasArgTerm>
+                      </SimpleArgRelationship>
+                    </hasArgument>
+                    <hasArgument rdf:resource="#contextNodeName1_1"/>
+                    <isContextNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                  </Context>
+                </isArgumentOf>
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >land_state_P_idPrevTime</rdfs:comment>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX5_1">
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</hasArgNumber>
+                <isArgumentOf>
+                  <Generative_input rdf:ID="IX5">
+                    <hasArgument rdf:resource="#IX5_1"/>
+                    <hasPossibleValues>
+                      <CategoricalRVState rdf:ID="H12_18">
+                        <hasType rdf:resource="#CategoryLabel"/>
+                        <isPossibleValueOf rdf:resource="#IX5"/>
+                        <isPossibleValueOf>
+                          <Domain_Res rdf:ID="Domain_Res.time_DayTime">
+                            <hasPossibleValues>
+                              <CategoricalRVState rdf:ID="H6_12">
+                                <hasType rdf:resource="#CategoryLabel"/>
+                                <isPossibleValueOf rdf:resource="#IX5"/>
+                                <isPossibleValueOf rdf:resource="#Domain_Res.time_DayTime"/>
+                              </CategoricalRVState>
+                            </hasPossibleValues>
+                            <hasArgument>
+                              <SimpleArgRelationship rdf:ID="time_DayTime_1">
+                                <hasArgTerm>
+                                  <OVariable rdf:ID="time.time_idTime">
+                                    <isSubsBy rdf:resource="#TIME_label"/>
+                                    <isOVariableIn>
+                                      <Domain_MFrag rdf:ID="Domain_MFrag.time">
+                                        <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                        <hasOVariable rdf:resource="#time.time_idTime"/>
+                                        <hasResidentNode rdf:resource="#Domain_Res.time_DayTime"/>
+                                        <hasResidentNode rdf:resource="#Domain_Res.time_Season"/>
+                                      </Domain_MFrag>
+                                    </isOVariableIn>
+                                    <rdfs:comment rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >time_idTime</rdfs:comment>
+                                    <isArgTermIn rdf:resource="#time_DayTime_1"/>
+                                    <isArgTermIn>
+                                      <SimpleArgRelationship rdf:ID="time_Season_1">
+                                        <hasArgNumber rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#int"
+                                        >1</hasArgNumber>
+                                        <hasArgTerm rdf:resource="#time.time_idTime"/>
+                                        <isArgumentOf rdf:resource="#Domain_Res.time_Season"/>
+                                      </SimpleArgRelationship>
+                                    </isArgTermIn>
+                                  </OVariable>
+                                </hasArgTerm>
+                                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                                >1</hasArgNumber>
+                                <isArgumentOf rdf:resource="#Domain_Res.time_DayTime"/>
+                              </SimpleArgRelationship>
+                            </hasArgument>
+                            <hasPossibleValues>
+                              <CategoricalRVState rdf:ID="H18_24">
+                                <hasType rdf:resource="#CategoryLabel"/>
+                                <isPossibleValueOf rdf:resource="#IX5"/>
+                                <isPossibleValueOf rdf:resource="#Domain_Res.time_DayTime"/>
+                              </CategoricalRVState>
+                            </hasPossibleValues>
+                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >time_DayTime</rdfs:comment>
+                            <hasInputInstance rdf:resource="#IX5"/>
+                            <hasPossibleValues rdf:resource="#H12_18"/>
+                            <isResidentNodeIn rdf:resource="#Domain_MFrag.time"/>
+                            <hasPossibleValues>
+                              <CategoricalRVState rdf:ID="H24_6">
+                                <isPossibleValueOf rdf:resource="#IX5"/>
+                                <isPossibleValueOf rdf:resource="#Domain_Res.time_DayTime"/>
+                                <hasType rdf:resource="#CategoryLabel"/>
+                              </CategoricalRVState>
+                            </hasPossibleValues>
+                            <hasProbDist>
+                              <DeclarativeDist rdf:ID="time_DayTime_Table">
+                                <hasDeclaration rdf:datatype=
+                                "http://www.w3.org/2001/XMLSchema#string"
+                                >[H24_6 = 0.25, H6_12 = 0.25, H12_18 = 0.25, H18_24 = 0.25]
+			</hasDeclaration>            <isProbDistOf rdf:resource="#Domain_Res.time_DayTime"/>
+                              </DeclarativeDist>
+                            </hasProbDist>
+                          </Domain_Res>
+                        </isPossibleValueOf>
+                      </CategoricalRVState>
+                    </hasPossibleValues>
+                    <hasPossibleValues rdf:resource="#H18_24"/>
+                    <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >IX5</rdfs:comment>
+                    <isInputInstanceOf rdf:resource="#Domain_Res.time_DayTime"/>
+                    <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                    <hasPossibleValues rdf:resource="#H24_6"/>
+                    <hasPossibleValues rdf:resource="#H6_12"/>
+                  </Generative_input>
+                </isArgumentOf>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX11_2">
+                <isArgumentOf>
+                  <Generative_input rdf:ID="IX11">
+                    <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                    <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                    <isInputInstanceOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >IX11</rdfs:comment>
+                    <hasArgument rdf:resource="#IX11_2"/>
+                    <hasArgument>
+                      <SimpleArgRelationship rdf:ID="IX11_1">
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <isArgumentOf rdf:resource="#IX11"/>
+                        <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                      </SimpleArgRelationship>
+                    </hasArgument>
+                    <hasPossibleValues rdf:resource="#Number_label"/>
+                  </Generative_input>
+                </isArgumentOf>
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</hasArgNumber>
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <isArgTermIn rdf:resource="#IX8_2"/>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX4_1">
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >1</hasArgNumber>
+                <isArgumentOf rdf:resource="#IX4"/>
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <isArgTermIn rdf:resource="#IX2_3"/>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX10_2">
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</hasArgNumber>
+                <isArgumentOf>
+                  <Generative_input rdf:ID="IX10">
+                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >IX10</rdfs:comment>
+                    <hasPossibleValues rdf:resource="#Number_label"/>
+                    <hasArgument rdf:resource="#IX10_2"/>
+                    <hasArgument>
+                      <SimpleArgRelationship rdf:ID="IX10_1">
+                        <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                        >1</hasArgNumber>
+                        <isArgumentOf rdf:resource="#IX10"/>
+                      </SimpleArgRelationship>
+                    </hasArgument>
+                    <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                    <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                    <isInputInstanceOf rdf:resource="#Domain_Res.environmental_factors_Rain"/>
+                  </Generative_input>
+                </isArgumentOf>
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+            <isArgTermIn rdf:resource="#IX6_2"/>
+            <isArgTermIn>
+              <SimpleArgRelationship rdf:ID="IX7_2">
+                <hasArgTerm rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+                >2</hasArgNumber>
+                <isArgumentOf rdf:resource="#IX7"/>
+              </SimpleArgRelationship>
+            </isArgTermIn>
+          </OVariable>
+        </hasArgTerm>
+      </SimpleArgRelationship>
+    </hasArgument>
+    <hasArgument rdf:resource="#IX2_2"/>
+    <hasArgument>
+      <SimpleArgRelationship rdf:ID="IX2_1">
+        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+        >1</hasArgNumber>
+        <hasArgTerm rdf:resource="#land_state_Dry.plant_state_idPlant"/>
+        <isArgumentOf rdf:resource="#IX2"/>
+      </SimpleArgRelationship>
+    </hasArgument>
+    <hasPossibleValues rdf:resource="#Number_label"/>         </Generative_input>
+                                                            </isArgumentOf>
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >2</hasArgNumber>
+                                                          </SimpleArgRelationship>
+                                                        </isArgTermIn>
+                                                        <isArgTermIn rdf:resource="#IX8_1"/>
+                                                        <isArgTermIn rdf:resource="#IX10_1"/>
+                                                        <isArgTermIn rdf:resource="#IX11_1"/>
+                                                        <rdfs:comment
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >land_state_idRegion</rdfs:comment>
+                                                        <isArgTermIn>
+                                                          <SimpleArgRelationship rdf:ID="land_state_Dry_1">
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >1</hasArgNumber>
+                                                            <isArgumentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                                            <hasArgTerm rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                          </SimpleArgRelationship>
+                                                        </isArgTermIn>
+                                                        <isArgTermIn rdf:resource="#IX9_1"/>
+                                                        <isOVariableIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                                        <isArgTermIn rdf:resource="#IX6_1"/>
+                                                      </OVariable>
+                                                    </subsOVar>
+                                                    <subsOVar>
+                                                      <OVariable rdf:ID="plant_state.plant_state_idRegion">
+                                                        <isOVariableIn>
+                                                          <Domain_MFrag rdf:ID="Domain_MFrag.plant_state">
+                                                            <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                                            <hasResidentNode rdf:resource="#Domain_Res.plant_state_Health"/>
+                                                            <hasOVariable rdf:resource="#plant_state.plant_state_idTime"/>
+                                                            <hasOVariable rdf:resource="#plant_state.plant_state_idRegion"/>
+                                                            <hasOVariable rdf:resource="#plant_state.plant_state_idPlant"/>
+                                                          </Domain_MFrag>
+                                                        </isOVariableIn>
+                                                        <isArgTermIn>
+                                                          <SimpleArgRelationship rdf:ID="plant_state_Health_2">
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >2</hasArgNumber>
+                                                            <isArgumentOf rdf:resource="#Domain_Res.plant_state_Health"/>
+                                                            <hasArgTerm rdf:resource="#plant_state.plant_state_idRegion"/>
+                                                          </SimpleArgRelationship>
+                                                        </isArgTermIn>
+                                                        <rdfs:comment
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >plant_state_idRegion</rdfs:comment>
+                                                        <isSubsBy rdf:resource="#REGION_label"/>
+                                                      </OVariable>
+                                                    </subsOVar>
+                                                    <subsOVar rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                                    <subsOVar rdf:resource="#region.region_idRegion"/>
+                                                    <hasUID rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >!REGION_label</hasUID>
+                                                    <hasType>
+                                                      <MetaEntity rdf:ID="TypeLabel">
+                                                        <isTypeOf>
+                                                          <MetaEntity rdf:ID="Boolean">
+                                                            <isTypeOf rdf:resource="#true"/>
+                                                            <isTypeOf rdf:resource="#absurd"/>
+                                                            <isTypeOf rdf:resource="#false"/>
+                                                            <hasUID
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >!Boolean</hasUID>
+                                                            <hasType rdf:resource="#TypeLabel"/>
+                                                            <rdfs:comment
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#string"
+                                                            >This MetaEntity should be applied to the truth-values T, F and ⊥ (absurd).</rdfs:comment>
+                                                          </MetaEntity>
+                                                        </isTypeOf>
+                                                        <hasUID
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >!TypeLabel</hasUID>
+                                                        <isTypeOf rdf:resource="#Number_label"/>
+                                                        <rdfs:comment
+                                                         rdf:datatype=
+                                                        "http://www.w3.org/2001/XMLSchema#string"
+                                                        >This MetaEntity shold be assigned for the labels of all domain specific types and subtypes.</rdfs:comment>
+                                                        <isTypeOf rdf:resource="#TIME_label"/>
+                                                        <isTypeOf rdf:resource="#REGION_label"/>
+                                                        <isTypeOf rdf:resource="#TypeLabel"/>
+                                                        <isTypeOf rdf:resource="#CategoryLabel"/>
+                                                        <hasType rdf:resource="#TypeLabel"/>
+                                                        <isTypeOf rdf:resource="#PLANT_label"/>
+                                                      </MetaEntity>
+                                                    </hasType>
+                                                  </MetaEntity>
+                                                </isSubsBy>
+                                                <rdfs:comment
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >region_idRegion</rdfs:comment>
+                                                <isArgTermIn>
+                                                  <SimpleArgRelationship rdf:ID="region_LocationType_1">
+                                                    <hasArgNumber
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#int"
+                                                    >1</hasArgNumber>
+                                                    <isArgumentOf rdf:resource="#Domain_Res.region_LocationType"/>
+                                                    <hasArgTerm rdf:resource="#region.region_idRegion"/>
+                                                  </SimpleArgRelationship>
+                                                </isArgTermIn>
+                                              </OVariable>
+                                            </hasOVariable>
+                                            <hasResidentNode rdf:resource="#Domain_Res.region_LocationType"/>
+                                          </Domain_MFrag>
+                                        </isResidentNodeIn>
+                                        <hasPossibleValues rdf:resource="#Indoor"/>
+                                        <hasPossibleValues rdf:resource="#Outdoor"/>
+                                        <hasInputInstance rdf:resource="#IX3"/>
+                                        <hasArgument rdf:resource="#region_LocationType_1"/>
+                                        <hasProbDist>
+                                          <DeclarativeDist rdf:ID="region_LocationType_Table">
+                                            <hasDeclaration rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >[Outdoor = 0.375, Indoor = 0.625]
+			</hasDeclaration>                        <isProbDistOf rdf:resource="#Domain_Res.region_LocationType"/>
+                                          </DeclarativeDist>
+                                        </hasProbDist>
+                                      </Domain_Res>
+                                    </isPossibleValueOf>
+                                    <hasType rdf:resource="#CategoryLabel"/>
+                                  </CategoricalRVState>
+                                </hasPossibleValues>
+                                <hasPossibleValues rdf:resource="#Outdoor"/>
+                                <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                <isInputInstanceOf rdf:resource="#Domain_Res.region_LocationType"/>
+                                <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >IX3</rdfs:comment>
+                                <hasArgument rdf:resource="#IX3_1"/>
+                              </Generative_input>
+                            </isPossibleValueOf>
+                            <isPossibleValueOf rdf:resource="#Domain_Res.region_LocationType"/>
+                          </CategoricalRVState>
+                        </isTypeOf>
+                        <isTypeOf>
+                          <CategoricalRVState rdf:ID="Winter">
+                            <isPossibleValueOf rdf:resource="#IX4"/>
+                            <isPossibleValueOf rdf:resource="#Domain_Res.time_Season"/>
+                            <hasType rdf:resource="#CategoryLabel"/>
+                          </CategoricalRVState>
+                        </isTypeOf>
+                        <isTypeOf rdf:resource="#Fall"/>
+                        <hasType rdf:resource="#TypeLabel"/>
+                        <isTypeOf>
+                          <CategoricalRVState rdf:ID="Others">
+                            <hasType rdf:resource="#CategoryLabel"/>
+                            <isPossibleValueOf rdf:resource="#IX1"/>
+                            <isPossibleValueOf>
+                              <Domain_Res rdf:ID="Domain_Res.plant_PlantType">
+                                <hasArgument>
+                                  <SimpleArgRelationship rdf:ID="plant_PlantType_1">
+                                    <hasArgNumber rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#int"
+                                    >1</hasArgNumber>
+                                    <isArgumentOf rdf:resource="#Domain_Res.plant_PlantType"/>
+                                    <hasArgTerm>
+                                      <OVariable rdf:ID="plant.plant_idPlant">
+                                        <isArgTermIn rdf:resource="#plant_PlantType_1"/>
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >plant_idPlant</rdfs:comment>
+                                        <isSubsBy rdf:resource="#PLANT_label"/>
+                                        <isOVariableIn>
+                                          <Domain_MFrag rdf:ID="Domain_MFrag.plant">
+                                            <hasResidentNode rdf:resource="#Domain_Res.plant_PlantType"/>
+                                            <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                            <hasOVariable rdf:resource="#plant.plant_idPlant"/>
+                                          </Domain_MFrag>
+                                        </isOVariableIn>
+                                      </OVariable>
+                                    </hasArgTerm>
+                                  </SimpleArgRelationship>
+                                </hasArgument>
+                                <hasProbDist>
+                                  <DeclarativeDist rdf:ID="plant_PlantType_Table">
+                                    <hasDeclaration rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >[GardenPlant = 0.625, Others = 0.375]
+			</hasDeclaration>                <isProbDistOf rdf:resource="#Domain_Res.plant_PlantType"/>
+                                  </DeclarativeDist>
+                                </hasProbDist>
+                                <hasPossibleValues rdf:resource="#Others"/>
+                                <hasPossibleValues>
+                                  <CategoricalRVState rdf:ID="GardenPlant">
+                                    <hasType rdf:resource="#CategoryLabel"/>
+                                    <isPossibleValueOf rdf:resource="#IX1"/>
+                                    <isPossibleValueOf rdf:resource="#Domain_Res.plant_PlantType"/>
+                                  </CategoricalRVState>
+                                </hasPossibleValues>
+                                <hasInputInstance rdf:resource="#IX1"/>
+                                <isResidentNodeIn rdf:resource="#Domain_MFrag.plant"/>
+                                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >plant_PlantType</rdfs:comment>
+                              </Domain_Res>
+                            </isPossibleValueOf>
+                          </CategoricalRVState>
+                        </isTypeOf>
+                        <isTypeOf rdf:resource="#GardenPlant"/>
+                        <isTypeOf rdf:resource="#H24_6"/>
+                        <isTypeOf rdf:resource="#Indoor"/>
+                        <isTypeOf rdf:resource="#Summer"/>
+                        <isTypeOf rdf:resource="#H6_12"/>
+                        <isTypeOf>
+                          <CategoricalRVState rdf:ID="Spring">
+                            <isPossibleValueOf rdf:resource="#IX4"/>
+                            <isPossibleValueOf rdf:resource="#Domain_Res.time_Season"/>
+                            <hasType rdf:resource="#CategoryLabel"/>
+                          </CategoricalRVState>
+                        </isTypeOf>
+                        <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >!CategoryLabel</hasUID>
+                        <isTypeOf rdf:resource="#H18_24"/>
+                        <isTypeOf rdf:resource="#H12_18"/>
+                      </MetaEntity>
+                    </hasType>
+                    <isPossibleValueOf rdf:resource="#IX4"/>
+                    <isPossibleValueOf rdf:resource="#Domain_Res.time_Season"/>
+                  </CategoricalRVState>
+                </hasPossibleValues>
+                <hasInputInstance rdf:resource="#IX4"/>
+                <isResidentNodeIn rdf:resource="#Domain_MFrag.time"/>
+                <hasPossibleValues rdf:resource="#Summer"/>
+                <hasProbDist>
+                  <DeclarativeDist rdf:ID="time_Season_Table">
+                    <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >[Winter = 0.25, Fall = 0.25, Summer = 0.25, Spring = 0.25]
+			</hasDeclaration>
+                    <isProbDistOf rdf:resource="#Domain_Res.time_Season"/>
+                  </DeclarativeDist>
+                </hasProbDist>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >time_Season</rdfs:comment>
+                <hasPossibleValues rdf:resource="#Winter"/>
+                <hasPossibleValues rdf:resource="#Spring"/>
+                <hasArgument rdf:resource="#time_Season_1"/>
+              </Domain_Res>
+            </isPossibleValueOf>
+            <hasType rdf:resource="#CategoryLabel"/>
+          </CategoricalRVState>
+        </hasPossibleValues>
+        <hasPossibleValues rdf:resource="#Winter"/>
+        <hasArgument rdf:resource="#IX4_1"/>
+        <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+        <hasPossibleValues rdf:resource="#Spring"/>
+        <hasPossibleValues rdf:resource="#Fall"/>
+        <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+        <isInputInstanceOf rdf:resource="#Domain_Res.time_Season"/>
+      </Generative_input>
+    </hasParent>
+    <hasParent rdf:resource="#IX1"/>
+    <hasParent rdf:resource="#IX8"/>
+    <hasParent rdf:resource="#IX5"/>
+    <hasParent rdf:resource="#IX3"/>
+    <hasParent rdf:resource="#IX7"/>
+    <hasArgument rdf:resource="#land_state_Dry_1"/>
+    <hasParent rdf:resource="#IX11"/>
+    <hasParent rdf:resource="#IX2"/>
+    <hasParent rdf:resource="#IX6"/>
+    <hasParent rdf:resource="#IX10"/>
+    <hasPossibleValues rdf:resource="#Number_label"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >land_state_Dry</rdfs:comment>
+    <hasInputInstance rdf:resource="#IX11"/>
+    <hasProbDist>
+      <DeclarativeDist rdf:ID="land_state_Dry_Table">
+        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H12_18 ) [1.4658636513275265 * Sum(plant_state_Health) + 2.4503787722969825 * Sum(environmental_factors_Temperature) + -1.0153602157257828 * Sum(environmental_factors_Light) + 3.961361946682274 * Sum(environmental_factors_Wind) + 1.7447613227650391 * Sum(environmental_factors_Humidity) + -2.0435216029854466 * Sum(environmental_factors_Rain) + 1.0226564143831167 * Sum(land_state_Dry) + NormalDist( 264.73439029569005, 0.04704131100119824)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H18_24 ) [-0.26047634862992664 * Sum(plant_state_Health) + -0.1645343968102857 * Sum(environmental_factors_Temperature) + 0.4055846022070613 * Sum(environmental_factors_Light) + -2.2473570436570647 * Sum(environmental_factors_Wind) + 1.626924274530952 * Sum(environmental_factors_Humidity) + -0.42325627230859064 * Sum(environmental_factors_Rain) + 0.990491948458498 * Sum(land_state_Dry) + NormalDist( -265.8602507495464, 0.006928693058767976)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H24_6 ) [1.6761625118373882 * Sum(plant_state_Health) + -0.11381007059395643 * Sum(environmental_factors_Temperature) + -0.6599294580537247 * Sum(environmental_factors_Light) + -1.2629550097019546 * Sum(environmental_factors_Wind) + 0.5162133706852075 * Sum(environmental_factors_Humidity) + 0.5228629797124142 * Sum(environmental_factors_Rain) + 0.9798340073339329 * Sum(land_state_Dry) + NormalDist( 196.37846340588624, 0.0019751063183832684)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H24_6 ) [-0.46909475591230887 * Sum(plant_state_Health) + -3.8572728286339526 * Sum(environmental_factors_Temperature) + -10.435212233152779 * Sum(environmental_factors_Light) + 1.7110948120826492 * Sum(environmental_factors_Wind) + 5.068520437316252 * Sum(environmental_factors_Humidity) + -3.6031565816172986 * Sum(environmental_factors_Rain) + 0.9365016732592621 * Sum(land_state_Dry) + NormalDist( 6017.595295206717, 0.005105317430482259)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H18_24 ) [0.934282333214183 * Sum(plant_state_Health) + -0.19764474059973125 * Sum(environmental_factors_Temperature) + 1.5096169454643436 * Sum(environmental_factors_Light) + 2.591864882031075 * Sum(environmental_factors_Wind) + 1.3743201659335038 * Sum(environmental_factors_Humidity) + -0.38541635013743747 * Sum(environmental_factors_Rain) + 0.9915896060205647 * Sum(land_state_Dry) + NormalDist( -1036.522825691834, 0.007942509813822163)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H12_18 ) [-2.9235225476287034 * Sum(plant_state_Health) + 3.668873879868949 * Sum(environmental_factors_Temperature) + -5.170477045630417 * Sum(environmental_factors_Light) + 1.5965922711222618 * Sum(environmental_factors_Wind) + -2.2975780183389816 * Sum(environmental_factors_Humidity) + 1.9085131884759647 * Sum(environmental_factors_Rain) + 0.9705943918801752 * Sum(land_state_Dry) + NormalDist( 3249.09340536227, 0.045933264132702156)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H12_18 ) [1.3434243685296834 * Sum(plant_state_Health) + -4.069412990623629 * Sum(environmental_factors_Temperature) + -0.31280243296604127 * Sum(environmental_factors_Light) + -1.662933660622798 * Sum(environmental_factors_Wind) + -7.448750372489485 * Sum(environmental_factors_Humidity) + -4.025126048890313 * Sum(environmental_factors_Rain) + 0.985239674072371 * Sum(land_state_Dry) + NormalDist( 615.1546884997952, 0.006062761163834196)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H24_6 ) [-1.838146837384409 * Sum(plant_state_Health) + -1.7097522032981693 * Sum(environmental_factors_Temperature) + -0.45124888169785926 * Sum(environmental_factors_Light) + -0.7408046587453754 * Sum(environmental_factors_Wind) + 2.0861432056260796 * Sum(environmental_factors_Humidity) + 2.013972820730748 * Sum(environmental_factors_Rain) + 0.9819462134174402 * Sum(land_state_Dry) + NormalDist( 387.938987414812, 0.0033800313898459944)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H18_24 ) [2.6966626947769505 * Sum(plant_state_Health) + -0.7920022717373865 * Sum(environmental_factors_Temperature) + -2.1673315115181353 * Sum(environmental_factors_Light) + -1.0254065103769108 * Sum(environmental_factors_Wind) + 3.635678801713336 * Sum(environmental_factors_Humidity) + -1.9785534115707932 * Sum(environmental_factors_Rain) + 1.0032065060899944 * Sum(land_state_Dry) + NormalDist( 858.5136692469785, 0.014046119749693275)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H24_6 ) [0.7684975645851928 * Sum(plant_state_Health) + -1.200971017222571 * Sum(environmental_factors_Temperature) + -0.6154158557754996 * Sum(environmental_factors_Light) + 0.1513133662936994 * Sum(environmental_factors_Wind) + 0.33117999071587256 * Sum(environmental_factors_Humidity) + 2.0628420303050454 * Sum(environmental_factors_Rain) + 1.0040142034195443 * Sum(land_state_Dry) + NormalDist( 284.3168635957993, 0.025644927869493017)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H6_12 ) [0.36598588781239805 * Sum(plant_state_Health) + -0.10760745846646641 * Sum(environmental_factors_Temperature) + -1.23617858711847 * Sum(environmental_factors_Light) + 0.19208252510764723 * Sum(environmental_factors_Wind) + -0.05214023945279811 * Sum(environmental_factors_Humidity) + -0.8942165307420902 * Sum(environmental_factors_Rain) + 0.9901581748344699 * Sum(land_state_Dry) + NormalDist( 695.1026720425824, 0.002643177442864797)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H18_24 ) [0.49419928250703227 * Sum(plant_state_Health) + 2.9453548057826566 * Sum(environmental_factors_Temperature) + -2.7726603189641317 * Sum(environmental_factors_Light) + 2.74840077187001 * Sum(environmental_factors_Wind) + -0.4241378190954195 * Sum(environmental_factors_Humidity) + -1.4019547027585695 * Sum(environmental_factors_Rain) + 1.0886498890605494 * Sum(land_state_Dry) + NormalDist( 1466.6575236168223, 0.003622235622730674)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H18_24 ) [-1.0996964153674913 * Sum(plant_state_Health) + -1.0206405847142963 * Sum(environmental_factors_Temperature) + 2.3533028308588992 * Sum(environmental_factors_Light) + 0.7688049587901187 * Sum(environmental_factors_Wind) + 0.928614680302335 * Sum(environmental_factors_Humidity) + -0.652483348443746 * Sum(environmental_factors_Rain) + 0.9992453077563405 * Sum(land_state_Dry) + NormalDist( -1261.5670189624507, 0.005704110973554499)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H24_6 ) [-11.537865122755775 * Sum(plant_state_Health) + 14.971158967728798 * Sum(environmental_factors_Temperature) + 16.820283534847704 * Sum(environmental_factors_Light) + 3.9622958782251203 * Sum(environmental_factors_Wind) + 19.654963640925303 * Sum(environmental_factors_Humidity) + 5.973018981329602 * Sum(environmental_factors_Rain) + 0.9692533050407572 * Sum(land_state_Dry) + NormalDist( -10201.324047562583, 0.022406857819316173)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H12_18 ) [-0.13109515493024393 * Sum(plant_state_Health) + 0.5852172726472675 * Sum(environmental_factors_Temperature) + 1.7009330178955362 * Sum(environmental_factors_Light) + 1.8624473160428572 * Sum(environmental_factors_Wind) + 0.7725467008183458 * Sum(environmental_factors_Humidity) + -0.682802959215687 * Sum(environmental_factors_Rain) + 0.9419577973382445 * Sum(land_state_Dry) + NormalDist( -1030.02954074208, 0.0038563341045311783)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H24_6 ) [0.3637537165042435 * Sum(plant_state_Health) + 0.8517416120221424 * Sum(environmental_factors_Temperature) + -2.357328816749913 * Sum(environmental_factors_Light) + 0.7353458093693988 * Sum(environmental_factors_Wind) + -1.3046133036525625 * Sum(environmental_factors_Humidity) + -1.1240246573027939 * Sum(environmental_factors_Rain) + 1.0255817982938265 * Sum(land_state_Dry) + NormalDist( 1370.238068913096, 0.0020482368897155323)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H12_18 ) [-2.8600296915453285 * Sum(plant_state_Health) + 0.6650915914962532 * Sum(environmental_factors_Temperature) + -1.828602279676545 * Sum(environmental_factors_Light) + -3.751836096054916 * Sum(environmental_factors_Wind) + -1.4977766266571635 * Sum(environmental_factors_Humidity) + -1.1239307019222444 * Sum(environmental_factors_Rain) + 1.0195709472886958 * Sum(land_state_Dry) + NormalDist( 1425.1674085176548, 0.05189364408952457)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H18_24 ) [0.03588730315157429 * Sum(plant_state_Health) + -0.7572956201354499 * Sum(environmental_factors_Temperature) + 0.21124841212809997 * Sum(environmental_factors_Light) + -0.9242182064545545 * Sum(environmental_factors_Wind) + 0.6406590750108982 * Sum(environmental_factors_Humidity) + -3.395122579676171 * Sum(environmental_factors_Rain) + 0.9867859560560986 * Sum(land_state_Dry) + NormalDist( -90.32118359228039, 0.007925966368832249)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H12_18 ) [-3.022904689693621 * Sum(plant_state_Health) + 2.1538740986081635 * Sum(environmental_factors_Temperature) + -2.9272149623152544 * Sum(environmental_factors_Light) + -0.3976887143888632 * Sum(environmental_factors_Wind) + 3.453412745714882 * Sum(environmental_factors_Humidity) + -0.33352998676169143 * Sum(environmental_factors_Rain) + 1.0154432882499573 * Sum(land_state_Dry) + NormalDist( 1753.40164056467, 0.0031837482697900654)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H12_18 ) [-2.006095900639094 * Sum(plant_state_Health) + 0.934418714266199 * Sum(environmental_factors_Temperature) + -0.027329705197747245 * Sum(environmental_factors_Light) + -0.13811460867725245 * Sum(environmental_factors_Wind) + -0.893712137556077 * Sum(environmental_factors_Humidity) + -1.8440456966749692 * Sum(environmental_factors_Rain) + 1.056735860580791 * Sum(land_state_Dry) + NormalDist( 240.7799996277617, 0.0027721071355443216)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H18_24 ) [0.18363022625592457 * Sum(plant_state_Health) + -2.0475651154862002 * Sum(environmental_factors_Temperature) + -0.5328660074278697 * Sum(environmental_factors_Light) + -0.013277244703174373 * Sum(environmental_factors_Wind) + 0.12766386542650016 * Sum(environmental_factors_Humidity) + -0.44662833505613075 * Sum(environmental_factors_Rain) + 0.900124342936689 * Sum(land_state_Dry) + NormalDist( 373.8026971909356, 0.003643881580998154)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H6_12 ) [1.9673562130220814 * Sum(plant_state_Health) + -0.1988860896623904 * Sum(environmental_factors_Temperature) + 1.2801572165214294 * Sum(environmental_factors_Light) + -0.3048532350431743 * Sum(environmental_factors_Wind) + -1.3955546346796044 * Sum(environmental_factors_Humidity) + -3.452196999715469 * Sum(environmental_factors_Rain) + 1.0926974674828707 * Sum(land_state_Dry) + NormalDist( -836.2791357987601, 0.007572905918122291)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H18_24 ) [-0.8477320388931133 * Sum(plant_state_Health) + -1.1634614605181568 * Sum(environmental_factors_Temperature) + -1.9836402293573627 * Sum(environmental_factors_Light) + 0.05280162095013452 * Sum(environmental_factors_Wind) + -2.29473741806175 * Sum(environmental_factors_Humidity) + 0.44462661807926906 * Sum(environmental_factors_Rain) + 1.001822718236162 * Sum(land_state_Dry) + NormalDist( 1386.8044931921274, 0.018068457528663373)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H6_12 ) [0.29565549469504226 * Sum(plant_state_Health) + 0.6743905593343933 * Sum(environmental_factors_Temperature) + -1.2934303434911059 * Sum(environmental_factors_Light) + -0.2767831234147504 * Sum(environmental_factors_Wind) + -1.4606318744689157 * Sum(environmental_factors_Humidity) + -2.864975871399543 * Sum(environmental_factors_Rain) + 1.0320450480521124 * Sum(land_state_Dry) + NormalDist( 795.5497420200097, 0.0048811094650745845)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H12_18 ) [3.0709840463186566 * Sum(plant_state_Health) + -1.4708352426729085 * Sum(environmental_factors_Temperature) + 4.203354281203703 * Sum(environmental_factors_Light) + 10.797710723672395 * Sum(environmental_factors_Wind) + 2.211677950353378 * Sum(environmental_factors_Humidity) + -2.1174323385974914 * Sum(environmental_factors_Rain) + 0.9337624976793283 * Sum(land_state_Dry) + NormalDist( -2829.9090474515565, 0.02656802508328937)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H6_12 ) [2.776252027545726 * Sum(plant_state_Health) + 1.8742219350937264 * Sum(environmental_factors_Temperature) + 1.8103366172231006 * Sum(environmental_factors_Light) + 0.5646667365392908 * Sum(environmental_factors_Wind) + -1.5760601252003175 * Sum(environmental_factors_Humidity) + 1.6341269965864536 * Sum(environmental_factors_Rain) + 1.000245363906749 * Sum(land_state_Dry) + NormalDist( -1336.8227265732282, 0.018013961194046857)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H24_6 ) [-2.171585066783841 * Sum(plant_state_Health) + -4.712682481090567 * Sum(environmental_factors_Temperature) + 2.376898672051297 * Sum(environmental_factors_Light) + 1.5103070373447451 * Sum(environmental_factors_Wind) + 3.358463937065636 * Sum(environmental_factors_Humidity) + 3.21232516444789 * Sum(environmental_factors_Rain) + 1.0105195231946038 * Sum(land_state_Dry) + NormalDist( -1201.0185273183204, 0.016062687575578494)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H6_12 ) [0.42571254038912976 * Sum(plant_state_Health) + -1.5589118733665241 * Sum(environmental_factors_Temperature) + 0.41762542768567545 * Sum(environmental_factors_Light) + 1.3167880371173162 * Sum(environmental_factors_Wind) + 2.01121226068776 * Sum(environmental_factors_Humidity) + 1.9381727013841616 * Sum(environmental_factors_Rain) + 0.9972971919707292 * Sum(land_state_Dry) + NormalDist( -355.6098151125699, 0.0019948748137572636)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H18_24 ) [0.4941937229762736 * Sum(plant_state_Health) + -1.445638408087381 * Sum(environmental_factors_Temperature) + 1.1108321617858943 * Sum(environmental_factors_Light) + -0.1723980625629622 * Sum(environmental_factors_Wind) + 0.5330921783960423 * Sum(environmental_factors_Humidity) + -1.088143504873777 * Sum(environmental_factors_Rain) + 1.1007827873983766 * Sum(land_state_Dry) + NormalDist( -665.2626644981586, 0.005360673976182617)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H6_12 ) [0.7995921033511397 * Sum(plant_state_Health) + -2.322788892439747 * Sum(environmental_factors_Temperature) + 0.04473376587031386 * Sum(environmental_factors_Light) + -2.8835638848365175 * Sum(environmental_factors_Wind) + -0.9053284251734008 * Sum(environmental_factors_Humidity) + 0.5629161851127087 * Sum(environmental_factors_Rain) + 0.9128942776500513 * Sum(land_state_Dry) + NormalDist( 39.770563877033624, 0.006283920954296862)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H24_6 ) [-0.3571599943261498 * Sum(plant_state_Health) + 0.7353911874670183 * Sum(environmental_factors_Temperature) + 0.5458714064436248 * Sum(environmental_factors_Light) + 2.561236476797059 * Sum(environmental_factors_Wind) + -0.4034842304846782 * Sum(environmental_factors_Humidity) + -0.5002222511839256 * Sum(environmental_factors_Rain) + 1.0512781991761464 * Sum(land_state_Dry) + NormalDist( -300.37968329912496, 0.0018309252967299572)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H12_18 ) [-4.359531861617246 * Sum(plant_state_Health) + 3.57119512513971 * Sum(environmental_factors_Temperature) + -2.684240466249048 * Sum(environmental_factors_Light) + -0.2279385106686398 * Sum(environmental_factors_Wind) + 4.096444450442823 * Sum(environmental_factors_Humidity) + -5.206013203691024 * Sum(environmental_factors_Rain) + 0.9934908893463672 * Sum(land_state_Dry) + NormalDist( 1712.4744096136185, 0.03410723059777254)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H24_6 ) [-1.5300236749995193 * Sum(plant_state_Health) + 2.553005852421741 * Sum(environmental_factors_Temperature) + -1.3610501783883038 * Sum(environmental_factors_Light) + 0.1984948408211551 * Sum(environmental_factors_Wind) + -0.3360700779273813 * Sum(environmental_factors_Humidity) + 0.6150970138817939 * Sum(environmental_factors_Rain) + 1.003620912166011 * Sum(land_state_Dry) + NormalDist( 859.5852095185537, 0.009763445210246413)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H24_6 ) [-0.7699988587428477 * Sum(plant_state_Health) + 1.8283797849375982 * Sum(environmental_factors_Temperature) + 0.46775765986248685 * Sum(environmental_factors_Light) + 0.6110765892777277 * Sum(environmental_factors_Wind) + 0.20952068175019445 * Sum(environmental_factors_Humidity) + 0.6063850193019542 * Sum(environmental_factors_Rain) + 0.9927934338069528 * Sum(land_state_Dry) + NormalDist( -279.1607878830377, 0.010234077107604378)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H6_12 ) [1.8910497778972513 * Sum(plant_state_Health) + 2.472233965856816 * Sum(environmental_factors_Temperature) + 1.9694557818549825 * Sum(environmental_factors_Light) + 2.593374025501646 * Sum(environmental_factors_Wind) + 1.9829859734427586 * Sum(environmental_factors_Humidity) + -3.175441448357816 * Sum(environmental_factors_Rain) + 1.0318951574209758 * Sum(land_state_Dry) + NormalDist( -1504.9919095478208, 0.032834519341426116)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H24_6 ) [2.619371569911003 * Sum(plant_state_Health) + -2.098962524626094 * Sum(environmental_factors_Temperature) + -3.525058772795079 * Sum(environmental_factors_Light) + 4.86458939477111 * Sum(environmental_factors_Wind) + -1.4046026980760424 * Sum(environmental_factors_Humidity) + 1.2113419407808426 * Sum(environmental_factors_Rain) + 1.0134582737358067 * Sum(land_state_Dry) + NormalDist( 1890.0846067683196, 0.00996015887934698)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H6_12 ) [0.10010049664729381 * Sum(plant_state_Health) + -1.6949801831682092 * Sum(environmental_factors_Temperature) + -2.668484715585823 * Sum(environmental_factors_Light) + -2.2919003475552735 * Sum(environmental_factors_Wind) + -3.069107605490127 * Sum(environmental_factors_Humidity) + -5.789820838591967 * Sum(environmental_factors_Rain) + 0.9787226708051057 * Sum(land_state_Dry) + NormalDist( 1822.350824192284, 0.010218049143682961)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H12_18 ) [4.076839677244305 * Sum(plant_state_Health) + 3.676024250491208 * Sum(environmental_factors_Temperature) + 2.5562391561826168 * Sum(environmental_factors_Light) + -0.9269188215967858 * Sum(environmental_factors_Wind) + -0.7312002400912618 * Sum(environmental_factors_Humidity) + 5.507944700148556 * Sum(environmental_factors_Rain) + 1.005038304986026 * Sum(land_state_Dry) + NormalDist( -2037.614549485334, 0.008449372222857576)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H12_18 ) [1.6194952929264557 * Sum(plant_state_Health) + 0.8391324248665113 * Sum(environmental_factors_Temperature) + -2.4658132244352573 * Sum(environmental_factors_Light) + 1.0542700534615008 * Sum(environmental_factors_Wind) + 2.188873689214363 * Sum(environmental_factors_Humidity) + 3.76604368866493 * Sum(environmental_factors_Rain) + 1.0312708469341436 * Sum(land_state_Dry) + NormalDist( 1082.1942753300752, 0.005767181921012998)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H12_18 ) [1.3775745468520524 * Sum(plant_state_Health) + -2.1301165558196415 * Sum(environmental_factors_Temperature) + 0.020745384817186796 * Sum(environmental_factors_Light) + 0.24055599989080179 * Sum(environmental_factors_Wind) + -0.7840002852009791 * Sum(environmental_factors_Humidity) + -0.6011715954740859 * Sum(environmental_factors_Rain) + 0.8720392783599382 * Sum(land_state_Dry) + NormalDist( -16.526038175578677, 0.005806410443518484)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H6_12 ) [0.0013126645046663832 * Sum(plant_state_Health) + 2.664300151216629 * Sum(environmental_factors_Temperature) + 0.9068237972124185 * Sum(environmental_factors_Light) + 3.7269183176683245 * Sum(environmental_factors_Wind) + 2.7348637369982596 * Sum(environmental_factors_Humidity) + 1.524966416600668 * Sum(environmental_factors_Rain) + 0.9809785515348217 * Sum(land_state_Dry) + NormalDist( -791.4236614979467, 0.004801476918162434)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H18_24 ) [6.5371161347988656 * Sum(plant_state_Health) + -8.209525049958513 * Sum(environmental_factors_Temperature) + 3.939324745808576 * Sum(environmental_factors_Light) + 3.8444867329562147 * Sum(environmental_factors_Wind) + 3.3412573964530217 * Sum(environmental_factors_Humidity) + 4.54710122073453 * Sum(environmental_factors_Rain) + 0.9615667243381972 * Sum(land_state_Dry) + NormalDist( -2870.351215762541, 0.034230065400867815)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H6_12 ) [4.232087347082453 * Sum(plant_state_Health) + 3.199687329765209 * Sum(environmental_factors_Temperature) + -6.002964936518358 * Sum(environmental_factors_Light) + 2.927097461250513 * Sum(environmental_factors_Wind) + -2.4797715466178363 * Sum(environmental_factors_Humidity) + -6.008506596171233 * Sum(environmental_factors_Rain) + 1.0052755167986742 * Sum(land_state_Dry) + NormalDist( 3111.071012489355, 0.01332236303727008)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Spring &amp; time_DayTime = H6_12 ) [0.12527530808398524 * Sum(plant_state_Health) + -1.9608888530851782 * Sum(environmental_factors_Temperature) + -0.6357231541159791 * Sum(environmental_factors_Light) + 1.1195455046351697 * Sum(environmental_factors_Wind) + 0.8728957143542111 * Sum(environmental_factors_Humidity) + -1.1622397467824896 * Sum(environmental_factors_Rain) + 1.013504714578657 * Sum(land_state_Dry) + NormalDist( 387.10559414056155, 0.005946515880141057)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H24_6 ) [2.823537202395812 * Sum(plant_state_Health) + -0.1403758248019784 * Sum(environmental_factors_Temperature) + 2.676093220365516 * Sum(environmental_factors_Light) + 0.5776044449588653 * Sum(environmental_factors_Wind) + 1.6569735087014976 * Sum(environmental_factors_Humidity) + -0.4427257086658756 * Sum(environmental_factors_Rain) + 0.9782878724556769 * Sum(land_state_Dry) + NormalDist( -1909.2584220295284, 0.007983101972122597)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H6_12 ) [-3.861360792809621 * Sum(plant_state_Health) + -0.13133754554120491 * Sum(environmental_factors_Temperature) + 0.7070935150710025 * Sum(environmental_factors_Light) + -0.2383194257793626 * Sum(environmental_factors_Wind) + -4.542382793638931 * Sum(environmental_factors_Humidity) + -1.3341619239954117 * Sum(environmental_factors_Rain) + 0.9815625758568028 * Sum(land_state_Dry) + NormalDist( 222.80413480635795, 0.01903073619807749)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H12_18 ) [-2.2733544225735294 * Sum(plant_state_Health) + 1.0264759962019672 * Sum(environmental_factors_Temperature) + -0.1577252756437666 * Sum(environmental_factors_Light) + 1.3736525574719565 * Sum(environmental_factors_Wind) + 1.1463474948547905 * Sum(environmental_factors_Humidity) + 3.896514720113206 * Sum(environmental_factors_Rain) + 1.00118629238453 * Sum(land_state_Dry) + NormalDist( 178.383514555543, 0.004169660552802323)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H12_18 ) [1.9100076640350405 * Sum(plant_state_Health) + -3.7554586293569523 * Sum(environmental_factors_Temperature) + 3.077637541686552 * Sum(environmental_factors_Light) + 4.413851628986525 * Sum(environmental_factors_Wind) + -6.06219506532978 * Sum(environmental_factors_Humidity) + -0.7219868431898838 * Sum(environmental_factors_Rain) + 1.005366888116173 * Sum(land_state_Dry) + NormalDist( -1553.9005177972226, 0.02660834197722295)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H18_24 ) [5.038818343319743 * Sum(plant_state_Health) + 1.9054575958115505 * Sum(environmental_factors_Temperature) + -0.06991242217118909 * Sum(environmental_factors_Light) + -2.9002211908564774 * Sum(environmental_factors_Wind) + 3.175389071633667 * Sum(environmental_factors_Humidity) + -4.531992686699818 * Sum(environmental_factors_Rain) + 0.9989686360155534 * Sum(land_state_Dry) + NormalDist( -629.06381515612, 0.007781627732200924)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H24_6 ) [1.955621338595158 * Sum(plant_state_Health) + 4.165768359343488 * Sum(environmental_factors_Temperature) + -3.8721462214623856 * Sum(environmental_factors_Light) + -5.84812123069662 * Sum(environmental_factors_Wind) + 1.8800397690860677 * Sum(environmental_factors_Humidity) + 9.169195631909815 * Sum(environmental_factors_Rain) + 1.0105594472943769 * Sum(land_state_Dry) + NormalDist( 1742.1483283927773, 0.001497590775365154)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H6_12 ) [-4.556706114452455 * Sum(plant_state_Health) + -0.018915001418287503 * Sum(environmental_factors_Temperature) + -1.9166925927274687 * Sum(environmental_factors_Light) + 2.279666553048184 * Sum(environmental_factors_Wind) + -0.3432287360486477 * Sum(environmental_factors_Humidity) + -4.176976392222787 * Sum(environmental_factors_Rain) + 1.0073798318799467 * Sum(land_state_Dry) + NormalDist( 1613.6704273207972, 0.01580183330456464)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H6_12 ) [-0.9880728612656142 * Sum(plant_state_Health) + 0.38277484183506205 * Sum(environmental_factors_Temperature) + -0.06239828496752753 * Sum(environmental_factors_Light) + 0.003953921649774372 * Sum(environmental_factors_Wind) + -0.008236655693131922 * Sum(environmental_factors_Humidity) + -1.8162105986225967 * Sum(environmental_factors_Rain) + 1.022278061878387 * Sum(land_state_Dry) + NormalDist( 136.97247313004277, 0.006323675874111423)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H12_18 ) [5.664593353730414 * Sum(plant_state_Health) + -2.657955044985016 * Sum(environmental_factors_Temperature) + -10.657303773678443 * Sum(environmental_factors_Light) + -4.916277102133648 * Sum(environmental_factors_Wind) + -4.031914164649439 * Sum(environmental_factors_Humidity) + -2.447829920315253 * Sum(environmental_factors_Rain) + 0.8506874445686075 * Sum(land_state_Dry) + NormalDist( 5975.626028145183, 0.007094236671710857)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H6_12 ) [1.5534094189130982 * Sum(plant_state_Health) + 0.8895386540101478 * Sum(environmental_factors_Temperature) + 0.33144696725303646 * Sum(environmental_factors_Light) + -2.6920667147603528 * Sum(environmental_factors_Wind) + 2.754956072194897 * Sum(environmental_factors_Humidity) + -0.7323968369721294 * Sum(environmental_factors_Rain) + 0.970952833360796 * Sum(land_state_Dry) + NormalDist( -495.1482589566944, 0.024976606371609478)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Fall &amp; time_DayTime = H18_24 ) [-0.31721133899672327 * Sum(plant_state_Health) + 0.5532116317534874 * Sum(environmental_factors_Temperature) + -2.2835010368511277 * Sum(environmental_factors_Light) + 0.06738191310979769 * Sum(environmental_factors_Wind) + 1.7606430225836933 * Sum(environmental_factors_Humidity) + 0.6225650457094389 * Sum(environmental_factors_Rain) + 0.9813229931898154 * Sum(land_state_Dry) + NormalDist( 1244.1763376349884, 0.022311122804133277)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H24_6 ) [-1.2178058841240869 * Sum(plant_state_Health) + -0.9355493290866701 * Sum(environmental_factors_Temperature) + -1.02634484241592 * Sum(environmental_factors_Light) + 1.5835726607032097 * Sum(environmental_factors_Wind) + 2.1065548650327406 * Sum(environmental_factors_Humidity) + 4.26165701202893 * Sum(environmental_factors_Rain) + 1.226098014775948 * Sum(land_state_Dry) + NormalDist( 571.833524726714, 0.004963851352829951)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H18_24 ) [1.5809547668854969 * Sum(plant_state_Health) + 2.1306092265799412 * Sum(environmental_factors_Temperature) + 0.7901826054527147 * Sum(environmental_factors_Light) + -4.959585584638915 * Sum(environmental_factors_Wind) + 0.35131712888743205 * Sum(environmental_factors_Humidity) + -1.1988901660773474 * Sum(environmental_factors_Rain) + 1.024149458727776 * Sum(land_state_Dry) + NormalDist( -674.3651570305863, 0.013326914841530701)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Winter &amp; time_DayTime = H24_6 ) [4.129499243001817 * Sum(plant_state_Health) + 0.16006061941745742 * Sum(environmental_factors_Temperature) + 0.09411104538818194 * Sum(environmental_factors_Light) + -3.4062916583790077 * Sum(environmental_factors_Wind) + 0.4949961664981677 * Sum(environmental_factors_Humidity) + 0.966938164594457 * Sum(environmental_factors_Rain) + 0.8689878228862291 * Sum(land_state_Dry) + NormalDist( -477.58930087367014, 0.0007811610455832341)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Summer &amp; time_DayTime = H6_12 ) [0.465473191593885 * Sum(plant_state_Health) + 0.31182486883303717 * Sum(environmental_factors_Temperature) + -2.5095785828413675 * Sum(environmental_factors_Light) + -4.508630486732571 * Sum(environmental_factors_Wind) + 2.7707476308616847 * Sum(environmental_factors_Humidity) + 4.7522678910238 * Sum(environmental_factors_Rain) + 0.9851889320327438 * Sum(land_state_Dry) + NormalDist( 1234.4632601894607, 0.024391673076259224)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Outdoor &amp; time_Season = Spring &amp; time_DayTime = H24_6 ) [-8.174444239760904 * Sum(plant_state_Health) + -5.073523144326641 * Sum(environmental_factors_Temperature) + -12.781827661425105 * Sum(environmental_factors_Light) + 6.340306507640097 * Sum(environmental_factors_Wind) + -2.503846940549024 * Sum(environmental_factors_Humidity) + -19.80742225650054 * Sum(environmental_factors_Rain) + 0.9743490074473141 * Sum(land_state_Dry) + NormalDist( 8706.694575840054, 0.015857746014173113)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = GardenPlant &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H18_24 ) [3.7446984869459756 * Sum(plant_state_Health) + 0.9544620336581193 * Sum(environmental_factors_Temperature) + 4.412601846970805 * Sum(environmental_factors_Light) + 3.8973823351038703 * Sum(environmental_factors_Wind) + -0.9316948701252414 * Sum(environmental_factors_Humidity) + -2.4792554257335837 * Sum(environmental_factors_Rain) + 0.9937220334061792 * Sum(land_state_Dry) + NormalDist( -2915.3883344652, 0.001075469884428415)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Outdoor &amp; time_Season = Winter &amp; time_DayTime = H18_24 ) [0.8581046966538146 * Sum(plant_state_Health) + 0.8340734645156598 * Sum(environmental_factors_Temperature) + 2.2355152702908754 * Sum(environmental_factors_Light) + 0.8132327346401809 * Sum(environmental_factors_Wind) + 1.1589811564030197 * Sum(environmental_factors_Humidity) + -3.9448291374591395 * Sum(environmental_factors_Rain) + 0.9920337725540173 * Sum(land_state_Dry) + NormalDist( -1433.3986074732547, 0.03075597742821401)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Summer &amp; time_DayTime = H12_18 ) [-1.0453126013111227 * Sum(plant_state_Health) + -1.2804336498924314 * Sum(environmental_factors_Temperature) + 0.6250311505232891 * Sum(environmental_factors_Light) + 1.274241875855033 * Sum(environmental_factors_Wind) + -0.8920965371030525 * Sum(environmental_factors_Humidity) + -0.9932468443584849 * Sum(environmental_factors_Rain) + 0.963481504856401 * Sum(land_state_Dry) + NormalDist( -160.37839244772118, 0.0026098256763407157)]
+			else if some plant_state_idPlant.land_state_idRegion.land_state_P_idPrevTime have ( plant_PlantType = Others &amp; region_LocationType = Indoor &amp; time_Season = Fall &amp; time_DayTime = H18_24 ) [-0.6121341861537145 * Sum(plant_state_Health) + -0.11468238296660901 * Sum(environmental_factors_Temperature) + -5.557105349779072 * Sum(environmental_factors_Light) + 0.36167701089578497 * Sum(environmental_factors_Wind) + 2.5062491889487513 * Sum(environmental_factors_Humidity) + 0.004746270043904655 * Sum(environmental_factors_Rain) + 0.7764314376353836 * Sum(land_state_Dry) + NormalDist( 3184.839915195407, 0.003907379556428225)]
+			else[
+			NormalDist(0.0 ,  100000000);]
+</hasDeclaration>
+        <isProbDistOf rdf:resource="#Domain_Res.land_state_Dry"/>
+      </DeclarativeDist>
+    </hasProbDist>
+    <hasParent rdf:resource="#IX9"/>
+    <hasArgument rdf:resource="#land_state_Dry_2"/>
+    <isResidentNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                                              </Domain_Res>
+                                                            </isParentOf>
+                                                            <hasPossibleValues rdf:resource="#Number_label"/>
+                                                            <hasArgument rdf:resource="#IX7_2"/>
+                                                            <hasArgument rdf:resource="#IX7_1"/>
+                                                          </Generative_input>
+                                                        </hasInputInstance>
+                                                        <hasArgument>
+                                                          <SimpleArgRelationship rdf:ID="environmental_factors_Light_2">
+                                                            <hasArgNumber
+                                                             rdf:datatype=
+                                                            "http://www.w3.org/2001/XMLSchema#int"
+                                                            >2</hasArgNumber>
+                                                            <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Light"/>
+                                                            <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                                                          </SimpleArgRelationship>
+                                                        </hasArgument>
+                                                        <hasArgument rdf:resource="#environmental_factors_Light_1"/>
+                                                      </Domain_Res>
+                                                    </isPossibleValueOf>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                                    <hasUID rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >!Number_label</hasUID>
+                                                    <isPossibleValueOf rdf:resource="#IX6"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.plant_state_Health"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.environmental_factors_Wind"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.environmental_factors_Humidity"/>
+                                                    <isPossibleValueOf rdf:resource="#IX2"/>
+                                                    <isPossibleValueOf rdf:resource="#IX10"/>
+                                                    <isPossibleValueOf rdf:resource="#IX7"/>
+                                                    <hasType rdf:resource="#TypeLabel"/>
+                                                    <isPossibleValueOf rdf:resource="#IX11"/>
+                                                    <isPossibleValueOf rdf:resource="#IX8"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.environmental_factors_Rain"/>
+                                                    <isPossibleValueOf rdf:resource="#Domain_Res.environmental_factors_Temperature"/>
+                                                    <isPossibleValueOf rdf:resource="#IX9"/>
+                                                  </MetaEntity>
+                                                </hasPossibleValues>
+                                                <hasInputInstance rdf:resource="#IX10"/>
+                                                <hasArgument>
+                                                  <SimpleArgRelationship rdf:ID="environmental_factors_Rain_2">
+                                                    <isArgumentOf rdf:resource="#Domain_Res.environmental_factors_Rain"/>
+                                                    <hasArgNumber
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#int"
+                                                    >2</hasArgNumber>
+                                                    <hasArgTerm rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                                                  </SimpleArgRelationship>
+                                                </hasArgument>
+                                                <hasArgument rdf:resource="#environmental_factors_Rain_1"/>
+                                                <hasProbDist>
+                                                  <DeclarativeDist rdf:ID="environmental_factors_Rain_Table">
+                                                    <hasDeclaration
+                                                     rdf:datatype=
+                                                    "http://www.w3.org/2001/XMLSchema#string"
+                                                    >NormalDist( 10.000305847997454, 0.0006350979842260385)</hasDeclaration>
+                                                    <isProbDistOf rdf:resource="#Domain_Res.environmental_factors_Rain"/>
+                                                  </DeclarativeDist>
+                                                </hasProbDist>
+                                                <rdfs:comment
+                                                 rdf:datatype=
+                                                "http://www.w3.org/2001/XMLSchema#string"
+                                                >environmental_factors_Rain</rdfs:comment>
+                                                <isResidentNodeIn rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                              </Domain_Res>
+                                            </hasResidentNode>
+                                            <hasResidentNode rdf:resource="#Domain_Res.environmental_factors_Humidity"/>
+                                            <hasResidentNode rdf:resource="#Domain_Res.environmental_factors_Wind"/>
+                                            <hasResidentNode rdf:resource="#Domain_Res.environmental_factors_Light"/>
+                                            <hasResidentNode rdf:resource="#Domain_Res.environmental_factors_Temperature"/>
+                                            <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                            <hasOVariable rdf:resource="#environmental_factors.environmental_factors_idTime"/>
+                                            <hasOVariable rdf:resource="#environmental_factors.environmental_factors_idRegion"/>
+                                          </Domain_MFrag>
+                                        </isOVariableIn>
+                                        <isSubsBy rdf:resource="#TIME_label"/>
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >environmental_factors_idTime</rdfs:comment>
+                                        <isArgTermIn rdf:resource="#environmental_factors_Rain_2"/>
+                                        <isArgTermIn rdf:resource="#environmental_factors_Humidity_2"/>
+                                        <isArgTermIn rdf:resource="#environmental_factors_Wind_2"/>
+                                        <isArgTermIn rdf:resource="#environmental_factors_Light_2"/>
+                                        <isArgTermIn rdf:resource="#environmental_factors_Temperature_2"/>
+                                      </OVariable>
+                                    </subsOVar>
+                                    <hasType rdf:resource="#TypeLabel"/>
+                                    <subsOVar rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                                    <subsOVar rdf:resource="#plant_state.plant_state_idTime"/>
+                                    <subsOVar rdf:resource="#predecessor.predecessor_idTime"/>
+                                    <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >!TIME_label</hasUID>
+                                    <subsOVar rdf:resource="#land_state_Dry.land_state_idTime"/>
+                                    <subsOVar>
+                                      <OVariable rdf:ID="predecessor.predecessor_idPrevTime">
+                                        <rdfs:comment rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >predecessor_idPrevTime</rdfs:comment>
+                                        <isOVariableIn rdf:resource="#Domain_MFrag.predecessor"/>
+                                        <isArgTermIn>
+                                          <SimpleArgRelationship rdf:ID="predecessor_1">
+                                            <hasArgNumber rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#int"
+                                            >1</hasArgNumber>
+                                            <isArgumentOf rdf:resource="#Domain_Res.predecessor"/>
+                                            <hasArgTerm rdf:resource="#predecessor.predecessor_idPrevTime"/>
+                                          </SimpleArgRelationship>
+                                        </isArgTermIn>
+                                        <isSubsBy rdf:resource="#TIME_label"/>
+                                      </OVariable>
+                                    </subsOVar>
+                                    <subsOVar rdf:resource="#time.time_idTime"/>
+                                  </MetaEntity>
+                                </isSubsBy>
+                                <isOVariableIn rdf:resource="#Domain_MFrag.plant_state"/>
+                                <isArgTermIn rdf:resource="#plant_state_Health_3"/>
+                                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >plant_state_idTime</rdfs:comment>
+                              </OVariable>
+                            </hasArgTerm>
+                            <isArgumentOf rdf:resource="#Domain_Res.plant_state_Health"/>
+                          </SimpleArgRelationship>
+                        </hasArgument>
+                        <hasArgument rdf:resource="#plant_state_Health_2"/>
+                        <hasArgument rdf:resource="#plant_state_Health_1"/>
+                        <hasProbDist>
+                          <DeclarativeDist rdf:ID="plant_state_Health_Table">
+                            <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >NormalDist( 100.00034417497841, 0.0007161621089691318)</hasDeclaration>
+                            <isProbDistOf rdf:resource="#Domain_Res.plant_state_Health"/>
+                          </DeclarativeDist>
+                        </hasProbDist>
+                        <hasPossibleValues rdf:resource="#Number_label"/>
+                        <hasInputInstance rdf:resource="#IX2"/>
+                        <isResidentNodeIn rdf:resource="#Domain_MFrag.plant_state"/>
+                        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >plant_state_Health</rdfs:comment>
+                      </Domain_Res>
+                    </isArgumentOf>
+                  </SimpleArgRelationship>
+                </isArgTermIn>
+                <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >plant_state_idPlant</rdfs:comment>
+                <isSubsBy rdf:resource="#PLANT_label"/>
+                <isOVariableIn rdf:resource="#Domain_MFrag.plant_state"/>
+              </OVariable>
+            </subsOVar>
+            <subsOVar rdf:resource="#plant.plant_idPlant"/>
+            <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >!PLANT_label</hasUID>
+            <hasType rdf:resource="#TypeLabel"/>
+          </MetaEntity>
+        </isSubsBy>
+        <isOVariableIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+        <isArgTermIn rdf:resource="#IX2_1"/>
+        <isArgTermIn rdf:resource="#IX1_1"/>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >plant_state_idPlant</rdfs:comment>
+      </OVariable>
+    </hasArgTerm>
+    <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
+    >1</hasArgNumber>
+    <isArgumentOf rdf:resource="#IX1"/>                       </SimpleArgRelationship>
+                                                            </hasArgument>
+                                                            <hasPossibleValues rdf:resource="#Others"/>
+                                                            <hasPossibleValues rdf:resource="#GardenPlant"/>
+                                                            <isParentOf rdf:resource="#Domain_Res.land_state_Dry"/>
+                                                            <isInputInstanceOf rdf:resource="#Domain_Res.plant_PlantType"/>
+                                                            <isInputNodeIn rdf:resource="#Domain_MFrag.land_state_Dry"/>
+                                                          </Generative_input>
+                                                        </hasInputNode>
+                                                        <hasInputNode rdf:resource="#IX10"/>
+                                                        <hasInputNode rdf:resource="#IX3"/>
+                                                        <hasOVariable rdf:resource="#land_state_Dry.land_state_idTime"/>
+                                                        <hasInputNode rdf:resource="#IX9"/>
+                                                        <hasOVariable rdf:resource="#land_state_Dry.plant_state_idPlant"/>
+                                                        <hasInputNode rdf:resource="#IX2"/>
+                                                        <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
+                                                        <hasInputNode rdf:resource="#IX8"/>
+                                                        <hasOVariable rdf:resource="#land_state_Dry.land_state_idRegion"/>
+                                                        <hasInputNode rdf:resource="#IX5"/>
+                                                        <hasInputNode rdf:resource="#IX7"/>
+                                                        <hasContextNode rdf:resource="#contextNodeName1"/>
+                                                        <hasResidentNode rdf:resource="#Domain_Res.land_state_Dry"/>
+                                                        <hasInputNode rdf:resource="#IX11"/>
+                                                        <hasInputNode rdf:resource="#IX6"/>
+                                                        <hasOVariable rdf:resource="#land_state_Dry.land_state_P_idPrevTime"/>
+                                                        <hasInputNode rdf:resource="#IX4"/>
+                                                      </Domain_MFrag>
+                                                    </hasMFrag>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.predecessor"/>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.plant_state"/>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.environmental_factors"/>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.time"/>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.region"/>
+                                                    <hasMFrag rdf:resource="#Domain_MFrag.plant"/>
+                                                  </MTheory>
+                                                </isMFragOf>
+                                                <hasResidentNode rdf:resource="#Domain_Res.predecessor"/>
+                                                <hasOVariable rdf:resource="#predecessor.predecessor_idTime"/>
+                                                <hasOVariable rdf:resource="#predecessor.predecessor_idPrevTime"/>
+                                              </Domain_MFrag>
+                                            </isOVariableIn>
+                                            <isSubsBy rdf:resource="#TIME_label"/>
+                                            <rdfs:comment rdf:datatype=
+                                            "http://www.w3.org/2001/XMLSchema#string"
+                                            >predecessor_idTime</rdfs:comment>
+                                            <isArgTermIn rdf:resource="#predecessor_2"/>
+                                          </OVariable>
+                                        </hasArgTerm>
+                                        <hasArgNumber rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#int"
+                                        >2</hasArgNumber>
+                                        <isArgumentOf rdf:resource="#Domain_Res.predecessor"/>
+                                      </SimpleArgRelationship>
+                                    </hasArgument>
+                                    <hasArgument rdf:resource="#predecessor_1"/>
+                                    <isResidentNodeIn rdf:resource="#Domain_MFrag.predecessor"/>
+                                    <hasContextInstance rdf:resource="#contextNodeName1"/>
+                                    <rdfs:comment rdf:datatype=
+                                    "http://www.w3.org/2001/XMLSchema#string"
+                                    >predecessor</rdfs:comment>
+                                  </Domain_Res>
+                                </isPossibleValueOf>
+                                <isPossibleValueOf>
                                   <BuiltInRV rdf:ID="iff">
                                     <hasPossibleValues rdf:resource="#true"/>
                                     <hasPossibleValues rdf:resource="#absurd"/>
@@ -158,494 +1335,7 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                                     <hasPossibleValues rdf:resource="#false"/>
                                   </BuiltInRV>
                                 </isPossibleValueOf>
-                                <hasType>
-                                  <MetaEntity rdf:ID="Boolean">
-                                    <isTypeOf rdf:resource="#true"/>
-                                    <isTypeOf rdf:resource="#absurd"/>
-                                    <isTypeOf rdf:resource="#false"/>
-                                    <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                                    >!Boolean</hasUID>
-                                    <hasType>
-                                      <MetaEntity rdf:ID="TypeLabel">
-                                        <isTypeOf>
-                                          <MetaEntity rdf:ID="USER_label">
-                                            <subsOVar>
-                                              <OVariable rdf:ID="user.user_idUser">
-                                                <isOVariableIn>
-                                                  <Domain_MFrag rdf:ID="Domain_MFrag.user">
-                                                    <hasResidentNode>
-                                                      <Domain_Res rdf:ID="Domain_Res.user_acs">
-                                                        <rdfs:comment
-                                                         rdf:datatype=
-                                                        "http://www.w3.org/2001/XMLSchema#string"
-                                                        >user_acs</rdfs:comment>
-                                                        <hasArgument>
-                                                          <SimpleArgRelationship rdf:ID="user_acs_1">
-                                                            <hasArgNumber
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#int"
-                                                            >1</hasArgNumber>
-                                                            <isArgumentOf rdf:resource="#Domain_Res.user_acs"/>
-                                                            <hasArgTerm rdf:resource="#user.user_idUser"/>
-                                                          </SimpleArgRelationship>
-                                                        </hasArgument>
-                                                        <hasProbDist>
-                                                          <DeclarativeDist rdf:ID="user_acs_Table">
-                                                            <hasDeclaration
-                                                             rdf:datatype=
-                                                            "http://www.w3.org/2001/XMLSchema#string"
-                                                            >[T = 0.375, F = 0.625]
-			</hasDeclaration>                                        <isProbDistOf rdf:resource="#Domain_Res.user_acs"/>
-                                                          </DeclarativeDist>
-                                                        </hasProbDist>
-                                                        <hasPossibleValues>
-                                                          <CategoricalRVState rdf:ID="F">
-                                                            <isPossibleValueOf>
-                                                              <Domain_Res rdf:ID="Domain_Res.review_rd">
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >review_rd</rdfs:comment>
-    <isResidentNodeIn>
-      <Domain_MFrag rdf:ID="Domain_MFrag.review">
-        <hasResidentNode>
-          <Domain_Res rdf:ID="Domain_Res.review_npp">
-            <hasArgument>
-              <SimpleArgRelationship rdf:ID="review_npp_1">
-                <hasArgTerm>
-                  <OVariable rdf:ID="review.review_idReview">
-                    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                    >review_idReview</rdfs:comment>
-                    <isArgTermIn>
-                      <SimpleArgRelationship rdf:ID="review_spamicity_1">
-                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                        >1</hasArgNumber>
-                        <isArgumentOf>
-                          <Domain_Res rdf:ID="Domain_Res.review_spamicity">
-                            <hasPossibleValues>
-                              <CategoricalRVState rdf:ID="low">
-                                <hasType>
-                                  <MetaEntity rdf:ID="CategoryLabel">
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="u3">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_idUser">
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u8">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u10">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues rdf:resource="#u3"/>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u7">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u2">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_idUser_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u6">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u1">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u9">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u5">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_idUser_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[u9 = 0.07317073170731707, u10 = 0.07317073170731707, u11 = 0.07317073170731707, u5 = 0.12195121951219512, u7 = 0.12195121951219512, u3 = 0.12195121951219512, u2 = 0.12195121951219512, u1 = 0.07317073170731707, u4 = 0.07317073170731707, u6 = 0.07317073170731707, u8 = 0.07317073170731707]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u11">
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <hasPossibleValues>
-                                              <CategoricalRVState rdf:ID="u4">
-                                                <isPossibleValueOf rdf:resource="#Domain_Res.review_idUser"/>
-                                                <hasType rdf:resource="#CategoryLabel"/>
-                                              </CategoricalRVState>
-                                            </hasPossibleValues>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_idUser</rdfs:comment>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf rdf:resource="#u11"/>
-                                    <rdfs:comment rdf:datatype=
-                                    "http://www.w3.org/2001/XMLSchema#string"
-                                    >This MetaEntity should be assigned to the labels for the states of random variables whose domain is a list of categorical values</rdfs:comment>
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="high">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf>
-                                      <CategoricalRVState rdf:ID="T">
-                                        <hasType rdf:resource="#CategoryLabel"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_npp"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_res">
-                                            <hasParent>
-                                              <Domain_Res rdf:ID="Domain_Res.review_od">
-                                                <hasPossibleValues rdf:resource="#F"/>
-                                                <hasPossibleValues rdf:resource="#T"/>
-                                                <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                                <isParentOf rdf:resource="#Domain_Res.review_res"/>
-                                                <rdfs:comment
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >review_od</rdfs:comment>
-                                                <hasArgument>
-                                                  <SimpleArgRelationship rdf:ID="review_od_1">
-                                                    <hasArgNumber
-                                                     rdf:datatype=
-                                                    "http://www.w3.org/2001/XMLSchema#int"
-                                                    >1</hasArgNumber>
-                                                    <isArgumentOf rdf:resource="#Domain_Res.review_od"/>
-                                                    <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                                  </SimpleArgRelationship>
-                                                </hasArgument>
-                                                <hasProbDist>
-                                                  <DeclarativeDist rdf:ID="review_od_Table">
-                                                    <hasDeclaration
-                                                     rdf:datatype=
-                                                    "http://www.w3.org/2001/XMLSchema#string"
-                                                    >[T = 0.46875, F = 0.53125]
-			</hasDeclaration>                                <isProbDistOf rdf:resource="#Domain_Res.review_od"/>
-                                                  </DeclarativeDist>
-                                                </hasProbDist>
-                                              </Domain_Res>
-                                            </hasParent>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_res</rdfs:comment>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_res_1">
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_res"/>
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_res_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >if any review_idReview have ( review_od = T ) [T = 0.8125, F = 0.1875]
-			else if any review_idReview have ( review_od = F ) [T = 0.2777777777777778, F = 0.7222222222222222]
-			else[ T = 0.5, F = 0.5]</hasDeclaration>     <isProbDistOf rdf:resource="#Domain_Res.review_res"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.user_acs"/>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_rd"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.user_nr">
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="user_nr_1">
-                                                <hasArgTerm rdf:resource="#user.user_idUser"/>
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <isArgumentOf rdf:resource="#Domain_Res.user_nr"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="user_nr_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.5416666666666666, F = 0.4583333333333333]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.user_nr"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >user_nr</rdfs:comment>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf rdf:resource="#Domain_Res.review_od"/>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.user_bst">
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="user_bst_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.5416666666666666, F = 0.4583333333333333]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.user_bst"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >user_bst</rdfs:comment>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="user_bst_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#user.user_idUser"/>
-                                                <isArgumentOf rdf:resource="#Domain_Res.user_bst"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                        <isPossibleValueOf>
-                                          <Domain_Res rdf:ID="Domain_Res.review_etf">
-                                            <rdfs:comment rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >review_etf</rdfs:comment>
-                                            <hasProbDist>
-                                              <DeclarativeDist rdf:ID="review_etf_Table">
-                                                <hasDeclaration
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >[T = 0.53125, F = 0.46875]
-			</hasDeclaration>                            <isProbDistOf rdf:resource="#Domain_Res.review_etf"/>
-                                              </DeclarativeDist>
-                                            </hasProbDist>
-                                            <hasPossibleValues rdf:resource="#F"/>
-                                            <hasPossibleValues rdf:resource="#T"/>
-                                            <hasArgument>
-                                              <SimpleArgRelationship rdf:ID="review_etf_1">
-                                                <hasArgNumber
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#int"
-                                                >1</hasArgNumber>
-                                                <hasArgTerm rdf:resource="#review.review_idReview"/>
-                                                <isArgumentOf rdf:resource="#Domain_Res.review_etf"/>
-                                              </SimpleArgRelationship>
-                                            </hasArgument>
-                                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                                          </Domain_Res>
-                                        </isPossibleValueOf>
-                                      </CategoricalRVState>
-                                    </isTypeOf>
-                                    <isTypeOf rdf:resource="#u4"/>
-                                    <isTypeOf rdf:resource="#low"/>
-                                    <isTypeOf rdf:resource="#u5"/>
-                                    <isTypeOf rdf:resource="#u6"/>
-                                    <isTypeOf rdf:resource="#u9"/>
-                                    <hasType rdf:resource="#TypeLabel"/>
-                                    <isTypeOf rdf:resource="#u1"/>
-                                    <isTypeOf rdf:resource="#F"/>
-                                    <isTypeOf rdf:resource="#u7"/>
-                                    <isTypeOf rdf:resource="#u2"/>
-                                    <isTypeOf rdf:resource="#u8"/>
-                                    <isTypeOf rdf:resource="#u10"/>
-                                    <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                                    >!CategoryLabel</hasUID>
-                                  </MetaEntity>
-                                </hasType>
-                                <isPossibleValueOf rdf:resource="#Domain_Res.review_spamicity"/>
-                              </CategoricalRVState>
-                            </hasPossibleValues>
-                            <hasPossibleValues rdf:resource="#high"/>
-                            <hasArgument rdf:resource="#review_spamicity_1"/>
-                            <hasProbDist>
-                              <DeclarativeDist rdf:ID="review_spamicity_Table">
-                                <hasDeclaration rdf:datatype=
-                                "http://www.w3.org/2001/XMLSchema#string"
-                                >[high = 0.53125, low = 0.46875]
-			</hasDeclaration>            <isProbDistOf rdf:resource="#Domain_Res.review_spamicity"/>
-                              </DeclarativeDist>
-                            </hasProbDist>
-                            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                            >review_spamicity</rdfs:comment>
-                            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-                          </Domain_Res>
-                        </isArgumentOf>
-                        <hasArgTerm rdf:resource="#review.review_idReview"/>
-                      </SimpleArgRelationship>
-                    </isArgTermIn>
-                    <isSubsBy>
-                      <MetaEntity rdf:ID="REVIEW_label">
-                        <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                        >!REVIEW_label</hasUID>
-                        <hasType rdf:resource="#TypeLabel"/>
-                        <subsOVar rdf:resource="#review.review_idReview"/>
-                      </MetaEntity>
-                    </isSubsBy>
-                    <isOVariableIn rdf:resource="#Domain_MFrag.review"/>
-                    <isArgTermIn rdf:resource="#review_res_1"/>
-                    <isArgTermIn rdf:resource="#review_npp_1"/>
-                    <isArgTermIn>
-                      <SimpleArgRelationship rdf:ID="review_rd_1">
-                        <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                        >1</hasArgNumber>
-                        <isArgumentOf rdf:resource="#Domain_Res.review_rd"/>
-                        <hasArgTerm rdf:resource="#review.review_idReview"/>
-                      </SimpleArgRelationship>
-                    </isArgTermIn>
-                    <isArgTermIn rdf:resource="#review_idUser_1"/>
-                    <isArgTermIn rdf:resource="#review_od_1"/>
-                    <isArgTermIn rdf:resource="#review_etf_1"/>
-                  </OVariable>
-                </hasArgTerm>
-                <hasArgNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int"
-                >1</hasArgNumber>
-                <isArgumentOf rdf:resource="#Domain_Res.review_npp"/>
-              </SimpleArgRelationship>
-            </hasArgument>
-            <hasProbDist>
-              <DeclarativeDist rdf:ID="review_npp_Table">
-                <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-                >[T = 0.40625, F = 0.59375]
-			</hasDeclaration>
-                <isProbDistOf rdf:resource="#Domain_Res.review_npp"/>
-              </DeclarativeDist>
-            </hasProbDist>
-            <hasPossibleValues rdf:resource="#F"/>
-            <hasPossibleValues rdf:resource="#T"/>
-            <isResidentNodeIn rdf:resource="#Domain_MFrag.review"/>
-            <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-            >review_npp</rdfs:comment>
-          </Domain_Res>
-        </hasResidentNode>
-        <hasResidentNode rdf:resource="#Domain_Res.review_spamicity"/>
-        <isMFragOf>
-          <MTheory rdf:ID="ROOT_MTheory_1">
-            <hasMFrag rdf:resource="#Domain_MFrag.user"/>
-            <hasMFrag rdf:resource="#Domain_MFrag.review"/>
-          </MTheory>
-        </isMFragOf>
-        <hasResidentNode rdf:resource="#Domain_Res.review_od"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_idUser"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_etf"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_rd"/>
-        <hasResidentNode rdf:resource="#Domain_Res.review_res"/>
-        <hasOVariable rdf:resource="#review.review_idReview"/>
-      </Domain_MFrag>
-    </isResidentNodeIn>
-    <hasProbDist>
-      <DeclarativeDist rdf:ID="review_rd_Table">
-        <hasDeclaration rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-        >[T = 0.46875, F = 0.53125]
-			</hasDeclaration>
-        <isProbDistOf rdf:resource="#Domain_Res.review_rd"/>
-      </DeclarativeDist>
-    </hasProbDist>
-    <hasPossibleValues rdf:resource="#F"/>
-    <hasPossibleValues rdf:resource="#T"/>
-    <hasArgument rdf:resource="#review_rd_1"/>                </Domain_Res>
-                                                            </isPossibleValueOf>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.review_npp"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.review_res"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.review_etf"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.user_acs"/>
-                                                            <hasType rdf:resource="#CategoryLabel"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.review_od"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.user_bst"/>
-                                                            <isPossibleValueOf rdf:resource="#Domain_Res.user_nr"/>
-                                                          </CategoricalRVState>
-                                                        </hasPossibleValues>
-                                                        <hasPossibleValues rdf:resource="#T"/>
-                                                        <isResidentNodeIn rdf:resource="#Domain_MFrag.user"/>
-                                                      </Domain_Res>
-                                                    </hasResidentNode>
-                                                    <hasResidentNode rdf:resource="#Domain_Res.user_nr"/>
-                                                    <hasResidentNode rdf:resource="#Domain_Res.user_bst"/>
-                                                    <hasOVariable rdf:resource="#user.user_idUser"/>
-                                                    <isMFragOf rdf:resource="#ROOT_MTheory_1"/>
-                                                  </Domain_MFrag>
-                                                </isOVariableIn>
-                                                <isArgTermIn rdf:resource="#user_acs_1"/>
-                                                <isArgTermIn rdf:resource="#user_nr_1"/>
-                                                <isArgTermIn rdf:resource="#user_bst_1"/>
-                                                <rdfs:comment
-                                                 rdf:datatype=
-                                                "http://www.w3.org/2001/XMLSchema#string"
-                                                >user_idUser</rdfs:comment>
-                                                <isSubsBy rdf:resource="#USER_label"/>
-                                              </OVariable>
-                                            </subsOVar>
-                                            <hasUID rdf:datatype=
-                                            "http://www.w3.org/2001/XMLSchema#string"
-                                            >!USER_label</hasUID>
-                                            <hasType rdf:resource="#TypeLabel"/>
-                                          </MetaEntity>
-                                        </isTypeOf>
-                                        <isTypeOf rdf:resource="#REVIEW_label"/>
-                                        <isTypeOf rdf:resource="#TypeLabel"/>
-                                        <isTypeOf rdf:resource="#Boolean"/>
-                                        <isTypeOf rdf:resource="#CategoryLabel"/>
-                                        <hasUID rdf:datatype=
-                                        "http://www.w3.org/2001/XMLSchema#string"
-                                        >!TypeLabel</hasUID>
-                                        <hasType rdf:resource="#TypeLabel"/>
-                                        <rdfs:comment rdf:datatype=
-                                        "http://www.w3.org/2001/XMLSchema#string"
-                                        >This MetaEntity shold be assigned for the labels of all domain specific types and subtypes.</rdfs:comment>
-                                      </MetaEntity>
-                                    </hasType>
-                                    <rdfs:comment rdf:datatype=
-                                    "http://www.w3.org/2001/XMLSchema#string"
-                                    >This MetaEntity should be applied to the truth-values T, F and ⊥ (absurd).</rdfs:comment>
-                                  </MetaEntity>
-                                </hasType>
+                                <hasType rdf:resource="#Boolean"/>
                                 <isPossibleValueOf>
                                   <BuiltInRV rdf:ID="or">
                                     <hasPossibleValues rdf:resource="#true"/>
@@ -660,6 +1350,7 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                                     <hasPossibleValues rdf:resource="#false"/>
                                   </BuiltInRV>
                                 </isPossibleValueOf>
+                                <isPossibleValueOf rdf:resource="#contextNodeName1"/>
                               </BooleanRVState>
                             </hasPossibleValues>
                           </BuiltInRV>
@@ -669,7 +1360,9 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                         <isPossibleValueOf rdf:resource="#exists"/>
                         <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                         >⊥</hasUID>
+                        <isPossibleValueOf rdf:resource="#contextNodeName1"/>
                         <isPossibleValueOf rdf:resource="#or"/>
+                        <isPossibleValueOf rdf:resource="#Domain_Res.predecessor"/>
                         <isPossibleValueOf rdf:resource="#and"/>
                         <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                         >This state is used for the cases in which a truth-value cannot be applied to a random variable (i.e. meaningless, undefined, or contradictory hypotheses).</rdfs:comment>
@@ -690,6 +1383,8 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
                 >This state corresponds to the meaningfull hypotheses that have a false truth-value.</rdfs:comment>
                 <hasUID rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
                 >T</hasUID>
+                <isPossibleValueOf rdf:resource="#contextNodeName1"/>
+                <isPossibleValueOf rdf:resource="#Domain_Res.predecessor"/>
                 <isPossibleValueOf rdf:resource="#and"/>
                 <isPossibleValueOf rdf:resource="#implies"/>
                 <isPossibleValueOf rdf:resource="#equalto"/>
@@ -747,11 +1442,6 @@ Note that MEBN's built-in Indirect Reference MFrag is already represented in PR-
           <owl:ObjectProperty rdf:ID="isParentOf"/>
         </owl:onProperty>
       </owl:Restriction>
-    </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="USER">
-    <rdfs:subClassOf>
-      <owl:Class rdf:ID="ObjectEntity"/>
     </rdfs:subClassOf>
   </owl:Class>
   <owl:Class rdf:ID="SimpleArgRelationship">
@@ -883,7 +1573,7 @@ A context node is either satisfiable or not, which means its possible states are
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
-  <owl:Class rdf:about="#ObjectEntity">
+  <owl:Class rdf:ID="ObjectEntity">
     <owl:disjointWith>
       <owl:Class rdf:ID="MetaEntity"/>
     </owl:disjointWith>
@@ -981,9 +1671,6 @@ A context node is either satisfiable or not, which means its possible states are
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
-  </owl:Class>
-  <owl:Class rdf:ID="REVIEW">
-    <rdfs:subClassOf rdf:resource="#ObjectEntity"/>
   </owl:Class>
   <owl:Class rdf:about="#Entity">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -1495,6 +2182,9 @@ For added compatibility, one probability distribution can be stored in multiple 
       </owl:Restriction>
     </rdfs:subClassOf>
   </owl:Class>
+  <owl:Class rdf:ID="REGION">
+    <rdfs:subClassOf rdf:resource="#ObjectEntity"/>
+  </owl:Class>
   <owl:Class rdf:about="#MetaEntity">
     <owl:equivalentClass>
       <owl:Class>
@@ -1604,6 +2294,15 @@ For added compatibility, one probability distribution can be stored in multiple 
         </owl:onProperty>
       </owl:Restriction>
     </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Number">
+    <rdfs:subClassOf rdf:resource="#ObjectEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PLANT">
+    <rdfs:subClassOf rdf:resource="#ObjectEntity"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TIME">
+    <rdfs:subClassOf rdf:resource="#ObjectEntity"/>
   </owl:Class>
   <owl:Class rdf:about="#Exemplar">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -2157,23 +2856,23 @@ The inverse of this property is isExemplarIn.</rdfs:comment>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >This object property is used to define a given state of a random variable as unique within an MTheory. That is, among all instances of RV (say) "A", only one will have state "x" as true. Thus, if one copy of RV "A" is known to be in state "x", then all other instances of "A" withing that MTheory will be in states other than "x". If "A" is binary, knowing that one instance of "A" is True and that True in "A" is a Globally Exclusive state, then we know that all other instances of "A" are False.</rdfs:comment>
   </owl:ObjectProperty>
-  <owl:ObjectProperty rdf:about="#hasInnerTerm">
-    <rdfs:range rdf:resource="#Node"/>
-    <rdfs:domain rdf:resource="#Node"/>
-    <owl:inverseOf>
-      <owl:ObjectProperty rdf:about="#isInnerTermOf"/>
-    </owl:inverseOf>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >This object property makes the connection between the many possible inner terms inside a MENB equation. It is used to decompose random variable terms usually employed in context and input nodes.
-The inverse property is isInnerTermOf.</rdfs:comment>
-  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#isInnerTermOf">
     <rdfs:domain rdf:resource="#Node"/>
     <rdfs:range rdf:resource="#Node"/>
-    <owl:inverseOf rdf:resource="#hasInnerTerm"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#hasInnerTerm"/>
+    </owl:inverseOf>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >This object property is used to model expressions.
 The inverse property is hasInnerTerm</rdfs:comment>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#hasInnerTerm">
+    <rdfs:range rdf:resource="#Node"/>
+    <rdfs:domain rdf:resource="#Node"/>
+    <owl:inverseOf rdf:resource="#isInnerTermOf"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >This object property makes the connection between the many possible inner terms inside a MENB equation. It is used to decompose random variable terms usually employed in context and input nodes.
+The inverse property is isInnerTermOf.</rdfs:comment>
   </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="#isPossibleValueOf">
     <rdfs:range>
@@ -2469,15 +3168,6 @@ The inverse property is isInputInstanceOf.</rdfs:comment>
     >This object property assigns MetaEntity individuals in order to define the type of the substituters for each MFrag ordinary variable.
 Its inverse property is the functional isSubsBy.</rdfs:comment>
   </owl:InverseFunctionalProperty>
-  <owl:InverseFunctionalProperty rdf:about="#hasProbAssign">
-    <rdfs:domain rdf:resource="#PR-OWLTable"/>
-    <rdfs:range rdf:resource="#ProbAssign"/>
-    <owl:inverseOf rdf:resource="#isProbAssignIn"/>
-    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
-    >An PR-OWL table is formed by many individual members of the class ProbAssign, which are cells in that table. This object property relates one PR-OWL table to its respective cells (ProbAssign elements).
-The inverse property is isProbAssignIn.</rdfs:comment>
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-  </owl:InverseFunctionalProperty>
   <owl:InverseFunctionalProperty rdf:about="#hasContextInstance">
     <owl:inverseOf rdf:resource="#isContextInstanceOf"/>
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -2493,6 +3183,15 @@ The inverse property is isContextInstanceOf.</rdfs:comment>
         </owl:unionOf>
       </owl:Class>
     </rdfs:domain>
+  </owl:InverseFunctionalProperty>
+  <owl:InverseFunctionalProperty rdf:about="#hasProbAssign">
+    <rdfs:domain rdf:resource="#PR-OWLTable"/>
+    <rdfs:range rdf:resource="#ProbAssign"/>
+    <owl:inverseOf rdf:resource="#isProbAssignIn"/>
+    <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >An PR-OWL table is formed by many individual members of the class ProbAssign, which are cells in that table. This object property relates one PR-OWL table to its respective cells (ProbAssign elements).
+The inverse property is isProbAssignIn.</rdfs:comment>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:InverseFunctionalProperty>
   <owl:InverseFunctionalProperty rdf:about="#hasOVariable">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
@@ -2539,6 +3238,7 @@ The inverse of this property is isArgumentOf</rdfs:comment>
 The inverse of this property is hasArgTerm.</rdfs:comment>
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
   </owl:InverseFunctionalProperty>
+  <DeclarativeDist rdf:ID="predecessor_Table"/>
   <BuiltInRV rdf:ID="identity">
     <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
     >An identity variable behaves like a single argument deterministic function which returns the value of its argument.</rdfs:comment>

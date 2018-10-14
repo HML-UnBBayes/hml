@@ -4,113 +4,327 @@ PrOwl="learnedMEBN.owl"
 
 % UBF MTheory declaration
 MTheory=ROOT_MTheory_1
-NextMFrag=3
-NextResident=11
-NextInput=1
-NextContext=1
+NextMFrag=8
+NextResident=13
+NextInput=12
+NextContext=2
 NextEntity=1
 
 % UBF MFrags and Nodes declaration
 
 % MFrag
-MFrag=review
+MFrag=plant
 NextOrdinaryVar=2
 
 % Resident nodes
 
 
-Node=review_od
+Node=plant_PlantType
 Type=DomainResidentNode
 Position=1.0,61.0
 Size=400,60
 Color=-66914
-PossibleValuesOrder=T,F
-
-Node=review_npp
-Type=DomainResidentNode
-Position=1.0,121.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
-
-Node=review_etf
-Type=DomainResidentNode
-Position=1.0,181.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
-
-Node=review_rd
-Type=DomainResidentNode
-Position=1.0,241.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
-
-Node=review_res
-Type=DomainResidentNode
-Position=1.0,301.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
-
-Node=review_spamicity
-Type=DomainResidentNode
-Position=1.0,361.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=high,low
-
-Node=review_idUser
-Type=DomainResidentNode
-Position=1.0,421.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=u9,u10,u11,u5,u7,u3,u2,u1,u4,u6,u8
+PossibleValuesOrder=GardenPlant,Others
 
 % Ordinary Variables
 
 
-Node=review_idReview
+Node=plant_idPlant
 Type=OrdinalVar
 Position=1.0,1.0
 Size=400,60
 Color=-5178237
 
 % MFrag
-MFrag=user
+MFrag=region
 NextOrdinaryVar=2
 
 % Resident nodes
 
 
-Node=user_bst
+Node=region_LocationType
 Type=DomainResidentNode
 Position=1.0,61.0
 Size=400,60
 Color=-66914
-PossibleValuesOrder=T,F
-
-Node=user_nr
-Type=DomainResidentNode
-Position=1.0,121.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
-
-Node=user_acs
-Type=DomainResidentNode
-Position=1.0,181.0
-Size=400,60
-Color=-66914
-PossibleValuesOrder=T,F
+PossibleValuesOrder=Outdoor,Indoor
 
 % Ordinary Variables
 
 
-Node=user_idUser
+Node=region_idRegion
 Type=OrdinalVar
 Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=time
+NextOrdinaryVar=2
+
+% Resident nodes
+
+
+Node=time_Season
+Type=DomainResidentNode
+Position=1.0,61.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Winter,Fall,Summer,Spring
+
+Node=time_DayTime
+Type=DomainResidentNode
+Position=1.0,121.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=H24_6,H6_12,H12_18,H18_24
+
+% Ordinary Variables
+
+
+Node=time_idTime
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=environmental_factors
+NextOrdinaryVar=3
+
+% Resident nodes
+
+
+Node=environmental_factors_Temperature
+Type=DomainResidentNode
+Position=1.0,121.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+Node=environmental_factors_Light
+Type=DomainResidentNode
+Position=1.0,181.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+Node=environmental_factors_Wind
+Type=DomainResidentNode
+Position=1.0,241.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+Node=environmental_factors_Humidity
+Type=DomainResidentNode
+Position=1.0,301.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+Node=environmental_factors_Rain
+Type=DomainResidentNode
+Position=1.0,361.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+% Ordinary Variables
+
+
+Node=environmental_factors_idRegion
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+Node=environmental_factors_idTime
+Type=OrdinalVar
+Position=1.0,61.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=plant_state
+NextOrdinaryVar=4
+
+% Resident nodes
+
+
+Node=plant_state_Health
+Type=DomainResidentNode
+Position=1.0,181.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=Number
+
+% Ordinary Variables
+
+
+Node=plant_state_idPlant
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+Node=plant_state_idRegion
+Type=OrdinalVar
+Position=1.0,61.0
+Size=400,60
+Color=-5178237
+
+Node=plant_state_idTime
+Type=OrdinalVar
+Position=1.0,121.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=predecessor
+NextOrdinaryVar=3
+
+% Resident nodes
+
+
+Node=predecessor
+Type=DomainResidentNode
+Position=1.0,121.0
+Size=400,60
+Color=-66914
+PossibleValuesOrder=false,true,absurd
+
+% Ordinary Variables
+
+
+Node=predecessor_idPrevTime
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+Node=predecessor_idTime
+Type=OrdinalVar
+Position=1.0,61.0
+Size=400,60
+Color=-5178237
+
+% MFrag
+MFrag=land_state_Dry
+NextOrdinaryVar=5
+
+% Resident nodes
+
+
+Node=land_state_Dry
+Type=DomainResidentNode
+Position=1.0,241.0
+Size=400,60
+Color=-4276736
+PossibleValuesOrder=Number
+
+% Input nodes
+
+
+Node=IX1
+Type=GenerativeInputNode
+Position=1.0,241.0
+Size=400,60
+Color=-2302756
+
+Node=IX2
+Type=GenerativeInputNode
+Position=1.0,301.0
+Size=400,60
+Color=-2302756
+
+Node=IX3
+Type=GenerativeInputNode
+Position=1.0,361.0
+Size=400,60
+Color=-2302756
+
+Node=IX4
+Type=GenerativeInputNode
+Position=1.0,421.0
+Size=400,60
+Color=-2302756
+
+Node=IX5
+Type=GenerativeInputNode
+Position=1.0,481.0
+Size=400,60
+Color=-2302756
+
+Node=IX6
+Type=GenerativeInputNode
+Position=1.0,541.0
+Size=400,60
+Color=-2302756
+
+Node=IX7
+Type=GenerativeInputNode
+Position=1.0,601.0
+Size=400,60
+Color=-2302756
+
+Node=IX8
+Type=GenerativeInputNode
+Position=1.0,661.0
+Size=400,60
+Color=-2302756
+
+Node=IX9
+Type=GenerativeInputNode
+Position=1.0,721.0
+Size=400,60
+Color=-2302756
+
+Node=IX10
+Type=GenerativeInputNode
+Position=1.0,781.0
+Size=400,60
+Color=-2302756
+
+Node=IX11
+Type=GenerativeInputNode
+Position=1.0,841.0
+Size=400,60
+Color=-2302756
+
+% Context nodes
+
+
+Node=contextNodeName1
+Type=ContextNode
+Position=200.0,61.0
+Size=400,60
+Color=-5178237
+
+% Ordinary Variables
+
+
+Node=land_state_idRegion
+Type=OrdinalVar
+Position=1.0,1.0
+Size=400,60
+Color=-5178237
+
+Node=land_state_idTime
+Type=OrdinalVar
+Position=1.0,61.0
+Size=400,60
+Color=-5178237
+
+Node=land_state_P_idPrevTime
+Type=OrdinalVar
+Position=1.0,121.0
+Size=400,60
+Color=-5178237
+
+Node=plant_state_idPlant
+Type=OrdinalVar
+Position=1.0,181.0
 Size=400,60
 Color=-5178237
 
