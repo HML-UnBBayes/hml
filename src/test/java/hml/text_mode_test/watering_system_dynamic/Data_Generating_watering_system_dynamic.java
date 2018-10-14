@@ -176,14 +176,16 @@ public class Data_Generating_watering_system_dynamic {
 	 
 	MySQL_Interface rdb = new MySQL_Interface(); 
  
-	public void createRDB() {
+	public void createRDB(boolean bTraining) {
 		rdb.connect("localhost", "root","jesus");
 
 		// Data for training 
-		rdb.connectSchema("wateringsystem_dynamic");
-		
+		if (bTraining) {
+			rdb.connectSchema("wateringsystem_dynamic");
+		} else { 		
 		// Data for test
-		//rdb.connectSchema("wateringsystem_dynamic_test");
+			rdb.connectSchema("wateringsystem_dynamic_test");
+		}
 		
 		rdb.deleteAllRows("environmental_factors");
 		rdb.deleteAllRows("land_state");
@@ -194,8 +196,8 @@ public class Data_Generating_watering_system_dynamic {
 //		rdb.addValue("time", "idTime, Season, DayTime", "'t111', 'Fall', 'H24_6'");
 	}
 	 
-	public void run() {
- 		createRDB();
+	public void run(boolean bTraining) {
+ 		createRDB(bTraining);
 		createNet();
 		
 		List<Double> results = new ArrayList<Double>();
@@ -333,6 +335,7 @@ public class Data_Generating_watering_system_dynamic {
 	}
 
 	public static void main(String[] args) {
-		 new Data_Generating_watering_system_dynamic().run();
+		boolean bTraining = true;
+		new Data_Generating_watering_system_dynamic().run(bTraining);
 	}
 }
