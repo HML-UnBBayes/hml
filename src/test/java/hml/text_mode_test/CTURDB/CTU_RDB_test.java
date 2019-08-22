@@ -92,7 +92,7 @@ public class CTU_RDB_test {
 		 
     public CTU_RDB_test(List<String> schemas) throws SQLException {
     	// initialize CSV files
-    	initCSVFiles();
+    	//initCSVFiles();
     	
     	// Step 1: connect relational databases
     	String address = "localhost:3306";

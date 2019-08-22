@@ -298,7 +298,7 @@ public class HMLP_Console extends GeneralDialog {
 	                    lcld = lcld.substring(4, lcld.length()-3);
 	                    
 	                    // Use square brackets
-	                    //lcld = "[" + lcld + "]";
+//	                    lcld = "[" + lcld + "]";
 	                   	                    
 	                    rNode.setTableFunction(lcld);
 	                
@@ -331,7 +331,7 @@ public class HMLP_Console extends GeneralDialog {
 	                    lcld = lcld.substring(4, lcld.length()-3);
 
 	                    // Use square brackets
-	                    //lcld = "[" + lcld + "]";
+	                    lcld = "[" + lcld + "]";
 	                    
 	                    
 	                    cRnode.setTableFunction(lcld);
@@ -715,7 +715,7 @@ public class HMLP_Console extends GeneralDialog {
 			return TOP_ALIGNMENT;
 		}
 	}
-/*
+
 	public static void main(String[] args) {
 		HMLP_Console d = new HMLP_Console(null, "HMLP Tool V.1");
 		d.init(windowMode.CONNECT_DB);
@@ -725,5 +725,5 @@ public class HMLP_Console extends GeneralDialog {
 		// d.insertTextOut("========", 3);
 		d.setVisible(true);
 	}
-*/
+
 }
