@@ -8,6 +8,8 @@ import java.util.Map;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
+import org.apache.log4j.Logger;
+
 import edu.gmu.seor.prognos.unbbayesplugin.continuous.prs.ContinuousResidentNode;
 import mebn_rm.MEBN.CLD.CLD;
 import mebn_rm.MEBN.MFrag.MFrag;
@@ -38,7 +40,7 @@ import unbbayes.prs.mebn.entity.ObjectEntityContainer;
 import unbbayes.prs.mebn.exception.MFragDoesNotExistException;
 
 public class OpenMEBNeditor {
-
+	static Logger logger = Logger.getLogger(OpenMEBNeditor.class);
 	public OpenMEBNeditor() {
 
 	}
@@ -101,7 +103,7 @@ public class OpenMEBNeditor {
 				if (m.mFragType == MFragType.COMMON) {
 					// Resident Nodes
 					for (MNode r : m.arrayResidentNodes) {
-						System.out.println("Converting the resident " + r.name);
+						logger.debug("Converting the resident " + r.name);
 						// Current Resident Node - either discrete or continuous resident node
 						Node currentNode = null;
 						
@@ -121,7 +123,7 @@ public class OpenMEBNeditor {
 	    	                }
 	
 	    	                if (r.name.equalsIgnoreCase("land_state_Dry")) {
-	    	                	System.out.println(r.name); 
+	    	                	logger.debug(r.name); 
 	    	                } 
 	    	                
 	    	                // Table Function
@@ -196,7 +198,7 @@ public class OpenMEBNeditor {
 				} else if (m.mFragType == MFragType.REFERENCE) {
 					// DISCRETE Resident Nodes
 					for (MNode r : m.arrayResidentNodes) {
-						System.out.println("Converting the resident " + r.name);  
+						logger.debug("Converting the resident " + r.name);  
                 		ResidentNode rNode = (ResidentNode) mebnController.insertResidentNode(1, NodePosition);
                 		NodePosition = NodePosition + 60;
                 		rNode.setSize(400, 60);
@@ -209,7 +211,7 @@ public class OpenMEBNeditor {
     	                }
 
     	                if (r.name.equalsIgnoreCase("predecessor")) {
-    	                	System.out.println(r.name); 
+    	                	logger.debug(r.name); 
     	                } 
     	                  
 	                    // Add states 

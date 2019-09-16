@@ -46,14 +46,16 @@
 	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.25.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-nop-1.7.25.jar"/>
 	<classpathentry kind="lib" path="lib/slf4j-simple-1.7.25.jar"/>
-	<classpathentry kind="lib" path="lib/tetrad-development.jar"/>
 	<classpathentry kind="lib" path="lib/xom-1.2.10.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/MEBN"/>
 	<classpathentry kind="lib" path="lib/commons-csv-1.5.jar"/>
 	<classpathentry kind="lib" path="lib/cps2.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/UnBBayes"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/MEBN_LN"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/MEBN_RM"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ModelerLib"/>
+	<classpathentry kind="lib" path="lib/commons-cli-1.4.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-2.6.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/MEBN"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/UnBBayes"/>
+	<classpathentry kind="lib" path="/ModelerLib/lib/tetrad-development.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

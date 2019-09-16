@@ -1,0 +1,10 @@
+defineNode(X , Desc); 
+{
+defineState(Continuous); 
+p( X ) = 
+NormalDist( 8.125, 8.41071);}
+defineNode(Y , Desc); 
+{
+defineState(Continuous); 
+p( Y | X  ) = 
+-0.21656 * X + NormalDist( 12.50955, 3.53412);}

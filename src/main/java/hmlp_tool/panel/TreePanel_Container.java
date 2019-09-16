@@ -146,11 +146,9 @@ public class TreePanel_Container extends MyPanel {
 					console.init(HMLP_Console.windowMode.ADD_PARENTS);
 				} else if (console.wMode == windowMode.JOIN_RELATIONS) {
 //					MFrag tablea_MFrag = leftPanel.mTheory.getMFrag(leftPanel.selectedObjectParent);
-//					MGraph tablea_g = tablea_MFrag.getFirstCandidateGraph();
-//					System.out.println(tablea_g);
+//					MGraph tablea_g = tablea_MFrag.getFirstCandidateGraph(); 
 //					// Set rules
-//					tablea_g.setCausality(leftPanel.selectedObject, leftPanel.selectedObject);
-//					System.out.println(tablea_g); 
+//					tablea_g.setCausality(leftPanel.selectedObject, leftPanel.selectedObject); 
 					
 				} else if (console.wMode == HMLP_Console.windowMode.ADD_CLD){ 
 				} else if (console.wMode == windowMode.LEARNING) { 

@@ -65,12 +65,8 @@ public class TreePanel_Right extends TreePanel {
 		model.reload(root);
 		
 		root.setUserObject("MFrag list");
-		MTheory m1 =  this.console.mTheory;
-  		
-		System.out.println("*After MEBN-RM *************************************************");
-		System.out.println(m1.toString("MFrag", "MNode"));
-		System.out.println("**************************************************");  
-		 
+		MTheory m1 =  this.console.mTheory; 
+		
 		DefaultMutableTreeNode temp = null;
 		DefaultMutableTreeNode temp2 = null; 
 				
